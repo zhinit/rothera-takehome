@@ -1,0 +1,1 @@
+../../.agents/workflows/lint_wiki.md

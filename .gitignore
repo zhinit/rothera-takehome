@@ -1,0 +1,40 @@
+# Archived wiki sources
+/raw/
+
+# Dependencies and package manager caches
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/install-state.gz
+
+# Build output and tooling caches
+dist/
+dist-ssr/
+coverage/
+.vite/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# Local environment variables (keep example files)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs and test artifacts
+*.log
+playwright-report/
+test-results/
+
+# Local editor, agent, and operating system files
+.idea/
+.vscode/
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
