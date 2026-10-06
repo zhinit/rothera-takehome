@@ -69,13 +69,18 @@ protocol limitation. No coverage percentage or load benchmark is configured.
 
 ## Latest verification
 
-On 2026-10-06, all 59 Vitest cases, seven controlled browser groups, the live
-smoke check, lint, TypeScript, formatting and the production build passed.
-The [controlled browser report](browser-behavior-result.json) and
-[live smoke report](browser-smoke-result.json) include the temporary screenshot
-directories. Those directories are local run artifacts and may be cleaned up.
+On 2026-10-06, all 64 Vitest cases, seven controlled browser groups, the live
+smoke check, lint, TypeScript, formatting, and the production build passed.
+Production assets were 238.07 kB JavaScript (74.80 kB gzip) and 10.70 kB CSS
+(2.82 kB gzip).
 
-After progressive discovery was added on 2026-10-06, all 64 Vitest cases, lint,
-TypeScript, formatting, and the production build passed. Browser suites were not
-rerun for this change. The new behavior is covered through controlled HTTP and
-WebSocket integration tests. Live startup timing has not been remeasured.
+The live check found 43 games and displayed 86 outcome rows for the selected
+game. Switching reused the socket, forced disconnection recovered with fresh
+snapshots, and PING/PONG and price changes were observed. Desktop and mobile
+checks passed with no runtime exceptions. No trade or tick-size messages arrived
+during the live run. Controlled tests cover those paths.
+
+The [controlled browser report](browser-behavior-result.json) and
+[live smoke report](browser-smoke-result.json) record the verified compact-row
+UI and progressive discovery. Their screenshot paths point to temporary local
+artifacts that may be cleaned up.

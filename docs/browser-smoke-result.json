@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-06T19:55:05.158Z",
-  "origin": "http://127.0.0.1:5174",
+  "checkedAt": "2026-10-06T20:31:23.437Z",
+  "origin": "http://127.0.0.1:5199",
   "initial": {
     "title": "Buccaneers at Cowboys",
     "games": 43,
@@ -25,12 +25,12 @@
   "sockets": 2,
   "received": {
     "book": 260,
-    "price_change": 26,
+    "price_change": 3,
     "last_trade_price": 0,
     "tick_size_change": 0,
     "PONG": 1
   },
   "sentFrames": 7,
   "errors": [],
-  "output": "/var/folders/mc/hr7kxx_543v4n95ypq6pwl840000gn/T/rothera-browser-mH3wyE"
+  "output": "/var/folders/mc/hr7kxx_543v4n95ypq6pwl840000gn/T/rothera-browser-Y2kxXV"
 }

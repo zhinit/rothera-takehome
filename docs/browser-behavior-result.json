@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-06T19:54:31.338Z",
+  "checkedAt": "2026-10-06T20:31:06.163Z",
   "passed": [
     "discovery error, retry and initial missing prices",
     "snapshot display and reversed outcome mapping",
@@ -10,5 +10,5 @@
     "mobile selection, table headings and viewport fit"
   ],
   "errors": [],
-  "output": "/var/folders/mc/hr7kxx_543v4n95ypq6pwl840000gn/T/rothera-browser-DAuhVC"
+  "output": "/var/folders/mc/hr7kxx_543v4n95ypq6pwl840000gn/T/rothera-browser-wEj7jl"
 }
