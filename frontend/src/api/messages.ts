@@ -24,7 +24,11 @@ function bestPrice(levels: unknown[], side: 'bid' | 'ask'): number | null {
 export function parseMessages(raw: string): QuoteUpdate[] {
   if (raw === 'PONG') return []
   let parsed: unknown
-  try { parsed = JSON.parse(raw) } catch { return [] }
+  try {
+    parsed = JSON.parse(raw)
+  } catch {
+    return []
+  }
   const updates: QuoteUpdate[] = []
   const messages: unknown[] = Array.isArray(parsed) ? parsed : [parsed]
   for (const message of messages) {
@@ -41,10 +45,19 @@ export function parseMessages(raw: string): QuoteUpdate[] {
       continue
     }
     if (typeof message.asset_id !== 'string') continue
-    if (message.event_type === 'book' && Array.isArray(message.bids) && Array.isArray(message.asks)) {
-      updates.push({ assetId: message.asset_id, snapshot: true,
-        bid: bestPrice(message.bids, 'bid'), ask: bestPrice(message.asks, 'ask'),
-        last: parsePrice(message.last_trade_price), tick: parseTick(message.tick_size) })
+    if (
+      message.event_type === 'book' &&
+      Array.isArray(message.bids) &&
+      Array.isArray(message.asks)
+    ) {
+      updates.push({
+        assetId: message.asset_id,
+        snapshot: true,
+        bid: bestPrice(message.bids, 'bid'),
+        ask: bestPrice(message.asks, 'ask'),
+        last: parsePrice(message.last_trade_price),
+        tick: parseTick(message.tick_size),
+      })
     } else if (message.event_type === 'last_trade_price') {
       const last = parsePrice(message.price)
       if (last !== null) updates.push({ assetId: message.asset_id, last })

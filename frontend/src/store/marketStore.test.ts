@@ -8,9 +8,19 @@ describe('quote state', () => {
     const untouched = useMarketStore.getState().quotes.b
     const apply = useMarketStore.getState().apply
     apply([{ assetId: 'a', snapshot: true, bid: 0.4, ask: 0.5, last: 0.45, tick: 0.01 }])
-    apply([{ assetId: 'a', bid: 0.41 }, { assetId: 'a', last: 0.42 }, { assetId: 'a', tick: 0.001 }])
+    apply([
+      { assetId: 'a', bid: 0.41 },
+      { assetId: 'a', last: 0.42 },
+      { assetId: 'a', tick: 0.001 },
+    ])
     apply([{ assetId: 'a', snapshot: true, bid: 0.1, last: null }])
-    expect(useMarketStore.getState().quotes.a).toEqual({ bid: 0.41, ask: 0.5, last: 0.42, tick: 0.001, seeded: true })
+    expect(useMarketStore.getState().quotes.a).toEqual({
+      bid: 0.41,
+      ask: 0.5,
+      last: 0.42,
+      tick: 0.001,
+      seeded: true,
+    })
     expect(useMarketStore.getState().quotes.b).toBe(untouched)
   })
 
@@ -18,7 +28,10 @@ describe('quote state', () => {
     const state = useMarketStore.getState()
     const listener = vi.fn()
     const unsubscribe = useMarketStore.subscribe(listener)
-    state.apply([{ assetId: 'a', bid: null }, { assetId: 'old-game', bid: 0.6 }])
+    state.apply([
+      { assetId: 'a', bid: null },
+      { assetId: 'old-game', bid: 0.6 },
+    ])
     expect(listener).not.toHaveBeenCalled()
     expect(useMarketStore.getState()).toBe(state)
     unsubscribe()
