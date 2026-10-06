@@ -11,10 +11,20 @@ class FakeSocket {
   onerror: (() => void) | null = null
   onmessage: ((event: { data: string }) => void) | null = null
   send = vi.fn<(data: string) => void>()
-  constructor() { FakeSocket.instances.push(this) }
-  open() { this.readyState = 1; this.onopen?.() }
-  close() { this.readyState = 3; this.onclose?.() }
-  receive(data: unknown) { this.onmessage?.({ data: typeof data === 'string' ? data : JSON.stringify(data) }) }
+  constructor() {
+    FakeSocket.instances.push(this)
+  }
+  open() {
+    this.readyState = 1
+    this.onopen?.()
+  }
+  close() {
+    this.readyState = 3
+    this.onclose?.()
+  }
+  receive(data: unknown) {
+    this.onmessage?.({ data: typeof data === 'string' ? data : JSON.stringify(data) })
+  }
 }
 
 function socket(index = 0): FakeSocket {
@@ -31,20 +41,32 @@ beforeEach(() => {
   vi.stubGlobal('WebSocket', FakeSocket)
   stream = new MarketStream()
 })
-afterEach(() => { stream.dispose(); vi.useRealTimers(); vi.unstubAllGlobals() })
+afterEach(() => {
+  stream.dispose()
+  vi.useRealTimers()
+  vi.unstubAllGlobals()
+})
 
 describe('market connection', () => {
   it('subscribes to the latest selection on open and switches on the same socket', () => {
     stream.setAssets(['a'])
     stream.setAssets(['b', 'c'])
     socket().open()
-    expect(socket().send).toHaveBeenLastCalledWith(JSON.stringify({ type: 'market', assets_ids: ['b', 'c'], initial_dump: true }))
+    expect(socket().send).toHaveBeenLastCalledWith(
+      JSON.stringify({ type: 'market', assets_ids: ['b', 'c'], initial_dump: true }),
+    )
     stream.setAssets(['d'])
     expect(socket().send.mock.calls.slice(-2)).toEqual([
       [JSON.stringify({ operation: 'unsubscribe', assets_ids: ['b', 'c'] })],
       [JSON.stringify({ operation: 'subscribe', assets_ids: ['d'], initial_dump: true })],
     ])
-    socket().receive({ event_type: 'price_change', price_changes: [{ asset_id: 'b', best_bid: '0.5' }, { asset_id: 'd', best_bid: '0.7' }] })
+    socket().receive({
+      event_type: 'price_change',
+      price_changes: [
+        { asset_id: 'b', best_bid: '0.5' },
+        { asset_id: 'd', best_bid: '0.7' },
+      ],
+    })
     expect(useMarketStore.getState().quotes.b).toBeUndefined()
     expect(useMarketStore.getState().quotes.d?.bid).toBe(0.7)
     expect(FakeSocket.instances).toHaveLength(1)
@@ -53,6 +75,7 @@ describe('market connection', () => {
   it('sends literal PING every ten seconds and reconnects if PONG stops', () => {
     stream.setAssets(['a'])
     socket().open()
+    socket().receive({ event_type: 'book', asset_id: 'a', bids: [], asks: [] })
     vi.advanceTimersByTime(10_000)
     expect(socket().send).toHaveBeenLastCalledWith('PING')
     socket().receive('PONG')
@@ -74,8 +97,13 @@ describe('market connection', () => {
     stream.setAssets(['b'])
     vi.advanceTimersByTime(1_000)
     socket(1).open()
-    expect(socket(1).send).toHaveBeenLastCalledWith(JSON.stringify({ type: 'market', assets_ids: ['b'], initial_dump: true }))
-    original.receive({ event_type: 'price_change', price_changes: [{ asset_id: 'b', best_bid: '0.9' }] })
+    expect(socket(1).send).toHaveBeenLastCalledWith(
+      JSON.stringify({ type: 'market', assets_ids: ['b'], initial_dump: true }),
+    )
+    original.receive({
+      event_type: 'price_change',
+      price_changes: [{ asset_id: 'b', best_bid: '0.9' }],
+    })
     expect(useMarketStore.getState().quotes.b?.bid).toBeNull()
     socket(1).receive({ event_type: 'book', asset_id: 'b', bids: [{ price: '0.3' }], asks: [] })
     expect(useMarketStore.getState().quotes.b?.bid).toBe(0.3)
@@ -85,7 +113,10 @@ describe('market connection', () => {
     stream.setAssets(['a'])
     stream.dispose()
     socket().open()
-    socket().receive({ event_type: 'price_change', price_changes: [{ asset_id: 'a', best_bid: '0.4' }] })
+    socket().receive({
+      event_type: 'price_change',
+      price_changes: [{ asset_id: 'a', best_bid: '0.4' }],
+    })
     vi.advanceTimersByTime(100_000)
     expect(FakeSocket.instances).toHaveLength(1)
     expect(socket().send).not.toHaveBeenCalled()
@@ -105,5 +136,76 @@ describe('market connection', () => {
     expect(FakeSocket.instances).toHaveLength(3)
     stream.dispose()
     expect(vi.getTimerCount()).toBe(0)
+  })
+
+  it('recovers from a partial snapshot even when heartbeats and deltas arrive', () => {
+    stream.setAssets(['a', 'b'])
+    socket().open()
+    socket().receive({ event_type: 'book', asset_id: 'a', bids: [{ price: '0.4' }], asks: [] })
+    socket().receive({
+      event_type: 'price_change',
+      price_changes: [{ asset_id: 'b', best_bid: '0.5' }],
+    })
+    vi.advanceTimersByTime(10_000)
+    socket().receive('PONG')
+    vi.advanceTimersByTime(5_000)
+    expect(useMarketStore.getState().status).toBe('reconnecting')
+    expect(useMarketStore.getState().quotes.a?.bid).toBeNull()
+    vi.advanceTimersByTime(1_000)
+    socket(1).open()
+    expect(socket(1).send).toHaveBeenLastCalledWith(
+      JSON.stringify({ type: 'market', assets_ids: ['a', 'b'], initial_dump: true }),
+    )
+    socket(1).receive([
+      { event_type: 'book', asset_id: 'a', bids: [], asks: [] },
+      { event_type: 'book', asset_id: 'b', bids: [], asks: [] },
+    ])
+    vi.advanceTimersByTime(10_000)
+    socket(1).receive('PONG')
+    vi.advanceTimersByTime(5_000)
+    expect(useMarketStore.getState().status).toBe('connected')
+    expect(Object.values(useMarketStore.getState().quotes).every((quote) => quote.seeded)).toBe(
+      true,
+    )
+    expect(FakeSocket.instances).toHaveLength(2)
+  })
+
+  it('backs off repeated snapshot failures instead of resetting on PONG', () => {
+    stream.setAssets(['a'])
+    socket().open()
+    socket().receive('PONG')
+    vi.advanceTimersByTime(16_000)
+    socket(1).open()
+    socket(1).receive('PONG')
+    vi.advanceTimersByTime(16_999)
+    expect(FakeSocket.instances).toHaveLength(2)
+    vi.advanceTimersByTime(1)
+    expect(FakeSocket.instances).toHaveLength(3)
+  })
+
+  it('restarts the snapshot deadline on selection and ignores old asset snapshots', () => {
+    stream.setAssets(['a'])
+    socket().open()
+    vi.advanceTimersByTime(10_000)
+    stream.setAssets(['b'])
+    socket().receive({ event_type: 'book', asset_id: 'a', bids: [], asks: [] })
+    vi.advanceTimersByTime(5_000)
+    expect(useMarketStore.getState().status).toBe('connected')
+    expect(FakeSocket.instances).toHaveLength(1)
+    vi.advanceTimersByTime(10_000)
+    expect(useMarketStore.getState().status).toBe('reconnecting')
+  })
+
+  it('cancels a pending snapshot deadline on disposal or an empty selection', () => {
+    stream.setAssets(['a'])
+    socket().open()
+    stream.setAssets([])
+    vi.advanceTimersByTime(15_000)
+    expect(socket().readyState).toBe(FakeSocket.OPEN)
+    stream.setAssets(['b'])
+    stream.dispose()
+    expect(vi.getTimerCount()).toBe(0)
+    vi.advanceTimersByTime(30_000)
+    expect(FakeSocket.instances).toHaveLength(1)
   })
 })
