@@ -24,4 +24,4 @@ The first three full pages contained no game-shaped slugs. Their contents includ
 
 ## Related pages
 
-[[polymarket-nfl-markets]] describes game and market identification. [[polymarket-browser-access]] records direct browser access.
+[[polymarket-nfl-markets]] describes game and market identification. [[polymarket-browser-access]] records direct browser access. [[polymarket-discovery-latency]] covers bounded concurrency, ordering, filter coverage comparisons, and progressive completion. [[browser-metadata-caching]] covers browser response reuse and provisional metadata snapshots.

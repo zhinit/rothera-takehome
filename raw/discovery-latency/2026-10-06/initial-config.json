@@ -1,0 +1,8 @@
+[
+  {"name":"baseline-serial","concurrency":1,"params":{}},
+  {"name":"baseline-concurrent-3","concurrency":3,"params":{}},
+  {"name":"order-id-desc","concurrency":3,"params":{"order":"id","ascending":"false"}},
+  {"name":"order-start-time-asc","concurrency":3,"params":{"order":"startTime,id","ascending":"true"}},
+  {"name":"tag-id-450","concurrency":3,"params":{"tag_id":"450"}},
+  {"name":"series-12185","concurrency":3,"params":{"series_id":"12185"}}
+]

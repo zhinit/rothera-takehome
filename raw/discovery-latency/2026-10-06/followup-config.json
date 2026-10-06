@@ -1,0 +1,8 @@
+[
+  {"name":"exclude-season-stats","concurrency":3,"params":{"exclude_tag_id":"105127"}},
+  {"name":"end-date-min","concurrency":3,"params":{"end_date_min":"2026-10-06T00:00:00Z"}},
+  {"name":"start-date-min","concurrency":3,"params":{"start_date_min":"2026-10-06T00:00:00Z"}},
+  {"name":"series-invalid","concurrency":1,"params":{"series_id":"999999999"}},
+  {"name":"repeat-concurrent-3","concurrency":3,"params":{}},
+  {"name":"repeat-serial","concurrency":1,"params":{}}
+]

@@ -2,6 +2,8 @@
 
 ## 2026-10-06
 
+- GPT-6 (Codex): Researched NFL discovery latency using approved Polymarket and MDN primary sources, archived full sources, ran direct-browser offset concurrency/filter/ordering and metadata-cache probes, compared complete game/market/token coverage using the captured parser, and documented recommendations in the wiki and project docs. No application code was modified. No subagents or other models were used.
+
 - GPT-6 (Codex): Renamed the totals heading to Combined Team Points Over/Under and removed Full game from its line count label.
 
 - GPT-6 (Codex): Reworked the testing suite around observable behavior. Replaced dashboard module mocks with controlled HTTP and WebSocket boundaries, added feed-to-screen and malformed-data/recovery cases, removed object-identity and animation-call assertions, and retained render-isolation verification. Added repeatable Chrome behavior scenarios with visible flash checks, shared browser tooling with the optional live smoke check, and documented the test commands and limits. No subagents or other models were used.

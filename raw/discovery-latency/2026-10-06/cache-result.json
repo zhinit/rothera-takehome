@@ -1,0 +1,1067 @@
+{
+  "result": {
+    "timestamp": "2026-10-06T20:11:15.687Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "origin": "http://127.0.0.1:60728",
+    "storageWriteMs": 0.5999999977648258,
+    "samples": [
+      {
+        "readAndParseMs": 0.4000000022351742,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.5,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.6999999992549419,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.7000000029802322,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.3999999985098839,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.5,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.5,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.5,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.3999999985098839,
+        "games": 43,
+        "markets": 1223
+      },
+      {
+        "readAndParseMs": 0.5,
+        "games": 43,
+        "markets": 1223
+      }
+    ],
+    "cacheWriteMs": 1.800000000745058,
+    "cacheReadAndParseMs": 1.300000000745058,
+    "cacheGames": 43,
+    "requests": [
+      {
+        "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+        "mode": "default",
+        "status": 200,
+        "milliseconds": 628.8999999985099,
+        "bytes": 9449976,
+        "count": 100,
+        "visibleHeaders": [
+          [
+            "cache-control",
+            "public, max-age=300"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "expires",
+            "Tue, 06 Oct 2026 20:16:15 GMT"
+          ],
+          [
+            "last-modified",
+            "Tue, 06 Oct 2026 20:11:15 GMT"
+          ]
+        ]
+      },
+      {
+        "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+        "mode": "default",
+        "status": 200,
+        "milliseconds": 24.200000002980232,
+        "bytes": 9449976,
+        "count": 100,
+        "visibleHeaders": [
+          [
+            "cache-control",
+            "public, max-age=300"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "expires",
+            "Tue, 06 Oct 2026 20:16:15 GMT"
+          ],
+          [
+            "last-modified",
+            "Tue, 06 Oct 2026 20:11:15 GMT"
+          ]
+        ]
+      },
+      {
+        "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+        "mode": "no-cache",
+        "status": 200,
+        "milliseconds": 76.59999999776483,
+        "bytes": 9449976,
+        "count": 100,
+        "visibleHeaders": [
+          [
+            "cache-control",
+            "public, max-age=300"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "expires",
+            "Tue, 06 Oct 2026 20:16:15 GMT"
+          ],
+          [
+            "last-modified",
+            "Tue, 06 Oct 2026 20:11:15 GMT"
+          ]
+        ]
+      }
+    ]
+  },
+  "network": [
+    {
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "requestId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "documentURL": "http://127.0.0.1:60728/",
+        "request": {
+          "url": "http://127.0.0.1:60728/",
+          "method": "GET",
+          "headers": {
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\""
+          },
+          "mixedContentType": "none",
+          "initialPriority": "VeryHigh",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "isSameSite": true
+        },
+        "timestamp": 23917.32285,
+        "wallTime": 1791317474.768567,
+        "initiator": {
+          "type": "other"
+        },
+        "redirectHasExtraInfo": false,
+        "type": "Document",
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A",
+        "hasUserGesture": false
+      }
+    },
+    {
+      "method": "Network.requestWillBeSentExtraInfo",
+      "params": {
+        "requestId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "associatedCookies": [],
+        "headers": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "Accept-Encoding": "gzip, deflate, br, zstd",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Connection": "keep-alive",
+          "Host": "127.0.0.1:60728",
+          "Sec-Fetch-Dest": "document",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-Site": "none",
+          "Sec-Fetch-User": "?1",
+          "Upgrade-Insecure-Requests": "1",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\""
+        },
+        "connectTiming": {
+          "requestTime": 23917.323207
+        },
+        "siteHasCookieInOtherPartition": false
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "params": {
+        "requestId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "timestamp": 23917.330214,
+        "type": "Document",
+        "response": {
+          "url": "http://127.0.0.1:60728/",
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "Connection": "keep-alive",
+            "Content-Type": "text/html",
+            "Date": "Tue, 06 Oct 2026 20:11:14 GMT",
+            "Keep-Alive": "timeout=5",
+            "Transfer-Encoding": "chunked"
+          },
+          "mimeType": "text/html",
+          "charset": "",
+          "connectionReused": true,
+          "connectionId": 110,
+          "remoteIPAddress": "127.0.0.1",
+          "remotePort": 60728,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "fromPrefetchCache": false,
+          "encodedDataLength": 156,
+          "timing": {
+            "requestTime": 23917.323207,
+            "proxyStart": -1,
+            "proxyEnd": -1,
+            "dnsStart": -1,
+            "dnsEnd": -1,
+            "connectStart": -1,
+            "connectEnd": -1,
+            "sslStart": -1,
+            "sslEnd": -1,
+            "workerStart": -1,
+            "workerReady": -1,
+            "workerFetchStart": -1,
+            "workerRespondWithSettled": -1,
+            "sendStart": 0.143,
+            "sendEnd": 0.181,
+            "pushStart": 0,
+            "pushEnd": 0,
+            "receiveHeadersStart": 3.632,
+            "receiveHeadersEnd": 5.632
+          },
+          "responseTime": 1791317474772.551,
+          "protocol": "http/1.1",
+          "alternateProtocolUsage": "unspecifiedReason",
+          "securityState": "secure"
+        },
+        "hasExtraInfo": true,
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A"
+      }
+    },
+    {
+      "method": "Network.responseReceivedExtraInfo",
+      "params": {
+        "requestId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "blockedCookies": [],
+        "headers": {
+          "Connection": "keep-alive",
+          "Content-Type": "text/html",
+          "Date": "Tue, 06 Oct 2026 20:11:14 GMT",
+          "Keep-Alive": "timeout=5",
+          "Transfer-Encoding": "chunked"
+        },
+        "resourceIPAddressSpace": "Loopback",
+        "statusCode": 200,
+        "headersText": "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nDate: Tue, 06 Oct 2026 20:11:14 GMT\r\nConnection: keep-alive\r\nKeep-Alive: timeout=5\r\nTransfer-Encoding: chunked\r\n\r\n",
+        "cookiePartitionKey": {
+          "topLevelSite": "http://127.0.0.1",
+          "hasCrossSiteAncestor": false
+        },
+        "cookiePartitionKeyOpaque": false,
+        "exemptedCookies": []
+      }
+    },
+    {
+      "method": "Network.loadingFinished",
+      "params": {
+        "requestId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "timestamp": 23917.329235,
+        "encodedDataLength": 228
+      }
+    },
+    {
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "requestId": "30811.2",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "documentURL": "http://127.0.0.1:60728/",
+        "request": {
+          "url": "http://127.0.0.1:60728/favicon.ico",
+          "method": "GET",
+          "headers": {
+            "sec-ch-ua-platform": "\"macOS\"",
+            "Referer": "http://127.0.0.1:60728/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "mixedContentType": "none",
+          "initialPriority": "High",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "isSameSite": true
+        },
+        "timestamp": 23917.342196,
+        "wallTime": 1791317474.787931,
+        "initiator": {
+          "type": "other"
+        },
+        "redirectHasExtraInfo": false,
+        "type": "Other",
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A",
+        "hasUserGesture": false
+      }
+    },
+    {
+      "method": "Network.requestWillBeSentExtraInfo",
+      "params": {
+        "requestId": "30811.2",
+        "associatedCookies": [],
+        "headers": {
+          "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "Accept-Encoding": "gzip, deflate, br, zstd",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Connection": "keep-alive",
+          "Host": "127.0.0.1:60728",
+          "Referer": "http://127.0.0.1:60728/",
+          "Sec-Fetch-Dest": "image",
+          "Sec-Fetch-Mode": "no-cors",
+          "Sec-Fetch-Site": "same-origin",
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\""
+        },
+        "connectTiming": {
+          "requestTime": 23917.342525
+        },
+        "clientSecurityState": {
+          "initiatorIsSecureContext": true,
+          "initiatorIPAddressSpace": "Loopback",
+          "localNetworkAccessRequestPolicy": "PermissionBlock"
+        },
+        "siteHasCookieInOtherPartition": false
+      }
+    },
+    {
+      "method": "Network.responseReceivedExtraInfo",
+      "params": {
+        "requestId": "30811.2",
+        "blockedCookies": [],
+        "headers": {
+          "Connection": "keep-alive",
+          "Content-Type": "text/html",
+          "Date": "Tue, 06 Oct 2026 20:11:14 GMT",
+          "Keep-Alive": "timeout=5",
+          "Transfer-Encoding": "chunked"
+        },
+        "resourceIPAddressSpace": "Loopback",
+        "statusCode": 200,
+        "headersText": "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nDate: Tue, 06 Oct 2026 20:11:14 GMT\r\nConnection: keep-alive\r\nKeep-Alive: timeout=5\r\nTransfer-Encoding: chunked\r\n\r\n",
+        "cookiePartitionKey": {
+          "topLevelSite": "http://127.0.0.1",
+          "hasCrossSiteAncestor": false
+        },
+        "cookiePartitionKeyOpaque": false,
+        "exemptedCookies": []
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "params": {
+        "requestId": "30811.2",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "timestamp": 23917.345695,
+        "type": "Other",
+        "response": {
+          "url": "http://127.0.0.1:60728/favicon.ico",
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Keep-Alive": "timeout=5",
+            "Date": "Tue, 06 Oct 2026 20:11:14 GMT",
+            "Content-Type": "text/html",
+            "Connection": "keep-alive"
+          },
+          "mimeType": "text/html",
+          "charset": "",
+          "connectionReused": true,
+          "connectionId": 110,
+          "remoteIPAddress": "127.0.0.1",
+          "remotePort": 60728,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "fromPrefetchCache": false,
+          "encodedDataLength": 156,
+          "timing": {
+            "requestTime": 23917.342525,
+            "proxyStart": -1,
+            "proxyEnd": -1,
+            "dnsStart": -1,
+            "dnsEnd": -1,
+            "connectStart": -1,
+            "connectEnd": -1,
+            "sslStart": -1,
+            "sslEnd": -1,
+            "workerStart": -1,
+            "workerReady": -1,
+            "workerFetchStart": -1,
+            "workerRespondWithSettled": -1,
+            "sendStart": 0.108,
+            "sendEnd": 0.134,
+            "pushStart": 0,
+            "pushEnd": 0,
+            "receiveHeadersStart": 0.423,
+            "receiveHeadersEnd": 2.984
+          },
+          "responseTime": 1791317474788.66,
+          "protocol": "http/1.1",
+          "alternateProtocolUsage": "unspecifiedReason",
+          "securityState": "secure"
+        },
+        "hasExtraInfo": true,
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A"
+      }
+    },
+    {
+      "method": "Network.loadingFinished",
+      "params": {
+        "requestId": "30811.2",
+        "timestamp": 23917.345798,
+        "encodedDataLength": 228
+      }
+    },
+    {
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "requestId": "30811.3",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "documentURL": "http://127.0.0.1:60728/",
+        "request": {
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          "method": "GET",
+          "headers": {
+            "sec-ch-ua-platform": "\"macOS\"",
+            "Referer": "http://127.0.0.1:60728/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "mixedContentType": "none",
+          "initialPriority": "High",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "isSameSite": false
+        },
+        "timestamp": 23917.402127,
+        "wallTime": 1791317474.847873,
+        "initiator": {
+          "type": "script",
+          "stack": {
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "4",
+                "url": "",
+                "lineNumber": 23,
+                "columnNumber": 29
+              }
+            ]
+          }
+        },
+        "redirectHasExtraInfo": false,
+        "type": "Fetch",
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A",
+        "hasUserGesture": false
+      }
+    },
+    {
+      "method": "Network.requestWillBeSentExtraInfo",
+      "params": {
+        "requestId": "30811.3",
+        "associatedCookies": [],
+        "headers": {
+          ":authority": "gamma-api.polymarket.com",
+          ":method": "GET",
+          ":path": "/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          ":scheme": "https",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "origin": "http://127.0.0.1:60728",
+          "priority": "u=1, i",
+          "referer": "http://127.0.0.1:60728/",
+          "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+        },
+        "connectTiming": {
+          "requestTime": 23917.402314
+        },
+        "clientSecurityState": {
+          "initiatorIsSecureContext": true,
+          "initiatorIPAddressSpace": "Loopback",
+          "localNetworkAccessRequestPolicy": "PermissionBlock"
+        },
+        "siteHasCookieInOtherPartition": false
+      }
+    },
+    {
+      "method": "Network.responseReceivedExtraInfo",
+      "params": {
+        "requestId": "30811.3",
+        "blockedCookies": [],
+        "headers": {
+          "access-control-allow-headers": "Accept, Authorization, Content-Type, X-CSRF-Token, Token, traceparent, tracestate, baggage",
+          "access-control-allow-methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+          "access-control-allow-origin": "*",
+          "access-control-max-age": "2592000",
+          "cache-control": "public, max-age=300",
+          "cf-cache-status": "MISS",
+          "cf-ray": "a467506a4c3980d3-EWR",
+          "content-encoding": "gzip",
+          "content-type": "application/json",
+          "date": "Tue, 06 Oct 2026 20:11:15 GMT",
+          "deprecation": "true",
+          "expires": "Tue, 06 Oct 2026 20:16:15 GMT",
+          "last-modified": "Tue, 06 Oct 2026 20:11:15 GMT",
+          "server": "cloudflare",
+          "set-cookie": "__cf_bm=9Xdw_1EE7Vd_c6r12L7cKDl2UuJWqMajkREYVsuBaTY-1791317474.9263694-1.0.1.1-SDcdI67oJgrR4O1s6PT.QRS.iH6DNGKlXmN_VUuYZugt.7pbFYUwenODqhx3mb_1Pjbf6frraxavQjfJjLpN3drzthJ5w2AUfDggYJXH.tGIAUhA76zQpiBC9EGlYfj8; HttpOnly; SameSite=None; Secure; Path=/; Domain=polymarket.com; Expires=Tue, 06 Oct 2026 20:41:15 GMT",
+          "speculation-rules": "\"/cdn-cgi/speculation\"",
+          "strict-transport-security": "max-age=7776000; includeSubDomains",
+          "sunset": "Fri, 01 May 2026 00:00:00 GMT",
+          "vary": "Accept-Encoding,Origin",
+          "warning": "299 - \"use /events/keyset\"",
+          "x-envoy-upstream-service-time": "180"
+        },
+        "resourceIPAddressSpace": "Public",
+        "statusCode": 200,
+        "cookiePartitionKey": {
+          "topLevelSite": "http://127.0.0.1",
+          "hasCrossSiteAncestor": true
+        },
+        "cookiePartitionKeyOpaque": false,
+        "exemptedCookies": []
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "params": {
+        "requestId": "30811.3",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "timestamp": 23917.846636,
+        "type": "Fetch",
+        "response": {
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "access-control-max-age": "2592000",
+            "content-encoding": "gzip",
+            "warning": "299 - \"use /events/keyset\"",
+            "cf-cache-status": "MISS",
+            "deprecation": "true",
+            "access-control-allow-methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+            "sunset": "Fri, 01 May 2026 00:00:00 GMT",
+            "expires": "Tue, 06 Oct 2026 20:16:15 GMT",
+            "date": "Tue, 06 Oct 2026 20:11:15 GMT",
+            "content-type": "application/json",
+            "vary": "Accept-Encoding,Origin",
+            "last-modified": "Tue, 06 Oct 2026 20:11:15 GMT",
+            "access-control-allow-headers": "Accept, Authorization, Content-Type, X-CSRF-Token, Token, traceparent, tracestate, baggage",
+            "strict-transport-security": "max-age=7776000; includeSubDomains",
+            "cache-control": "public, max-age=300",
+            "x-envoy-upstream-service-time": "180",
+            "speculation-rules": "\"/cdn-cgi/speculation\"",
+            "cf-ray": "a467506a4c3980d3-EWR",
+            "access-control-allow-origin": "*",
+            "server": "cloudflare"
+          },
+          "mimeType": "application/json",
+          "charset": "",
+          "connectionReused": false,
+          "connectionId": 176,
+          "remoteIPAddress": "172.64.153.51",
+          "remotePort": 443,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "fromPrefetchCache": false,
+          "encodedDataLength": 758,
+          "timing": {
+            "requestTime": 23917.402314,
+            "proxyStart": -1,
+            "proxyEnd": -1,
+            "dnsStart": 0.073,
+            "dnsEnd": 15.503,
+            "connectStart": 15.61,
+            "connectEnd": 41.989,
+            "sslStart": 24.48,
+            "sslEnd": 41.985,
+            "workerStart": -1,
+            "workerReady": -1,
+            "workerFetchStart": -1,
+            "workerRespondWithSettled": -1,
+            "sendStart": 42.061,
+            "sendEnd": 42.107,
+            "pushStart": 0,
+            "pushEnd": 0,
+            "receiveHeadersStart": 443.873,
+            "receiveHeadersEnd": 443.963
+          },
+          "responseTime": 1791317475291.922,
+          "protocol": "h2",
+          "alternateProtocolUsage": "unspecifiedReason",
+          "securityState": "secure",
+          "securityDetails": {
+            "protocol": "TLS 1.3",
+            "keyExchange": "",
+            "keyExchangeGroup": "X25519MLKEM768",
+            "cipher": "AES_128_GCM",
+            "certificateId": 0,
+            "subjectName": "polymarket.com",
+            "sanList": [
+              "polymarket.com",
+              "*.polymarket.com",
+              "*.perpetuals.polymarket.com"
+            ],
+            "issuer": "WE1",
+            "validFrom": 1788084934,
+            "validTo": 1795864531,
+            "signedCertificateTimestampList": [
+              {
+                "status": "Verified",
+                "origin": "Embedded in certificate",
+                "logDescription": "DigiCert 'Wyvern2026h2'",
+                "logId": "C2317E574519A345EE7F38DEB29041EBC7C2215A22BF7FD5B5AD769AD90E52CD",
+                "timestamp": 1788088535354,
+                "hashAlgorithm": "SHA-256",
+                "signatureAlgorithm": "ECDSA",
+                "signatureData": "3045022074EEAF61662462098C1E02B7D5CE84AB11C25CE35F6301456B0C6C768E000A9602210091F9948CA5DA4EFAB469100E0493AC784AC75650D1A9F4E2FF41E44D7398B496"
+              },
+              {
+                "status": "Verified",
+                "origin": "Embedded in certificate",
+                "logDescription": "Google 'Xenon2026h2' log",
+                "logId": "D809553B944F7AFFC816196F944F85ABB0F8FC5E8755260F15D12E72BB454B14",
+                "timestamp": 1788088535372,
+                "hashAlgorithm": "SHA-256",
+                "signatureAlgorithm": "ECDSA",
+                "signatureData": "3046022100FC446D5974A190ED74DE20B8A83EDD164631D3A141BB1904F1E3AC95E6B47A2B022100D70C738C7FE52E84965587137BD96793EEF9B6DD302E72F91DBDF5A69B5753B9"
+              }
+            ],
+            "certificateTransparencyCompliance": "compliant",
+            "serverSignatureAlgorithm": 1027,
+            "encryptedClientHello": false
+          }
+        },
+        "hasExtraInfo": true,
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A"
+      }
+    },
+    {
+      "method": "Network.loadingFinished",
+      "params": {
+        "requestId": "30811.3",
+        "timestamp": 23918.018269,
+        "encodedDataLength": 822141
+      }
+    },
+    {
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "requestId": "30811.4",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "documentURL": "http://127.0.0.1:60728/",
+        "request": {
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          "method": "GET",
+          "headers": {
+            "sec-ch-ua-platform": "\"macOS\"",
+            "Referer": "http://127.0.0.1:60728/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "mixedContentType": "none",
+          "initialPriority": "High",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "isSameSite": false
+        },
+        "timestamp": 23918.074541,
+        "wallTime": 1791317475.520286,
+        "initiator": {
+          "type": "script",
+          "stack": {
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "4",
+                "url": "",
+                "lineNumber": 23,
+                "columnNumber": 29
+              }
+            ]
+          }
+        },
+        "redirectHasExtraInfo": false,
+        "type": "Fetch",
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A",
+        "hasUserGesture": false
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "params": {
+        "requestId": "30811.4",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "timestamp": 23918.075291,
+        "type": "Fetch",
+        "response": {
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "access-control-max-age": "2592000",
+            "content-encoding": "gzip",
+            "warning": "299 - \"use /events/keyset\"",
+            "cf-cache-status": "MISS",
+            "deprecation": "true",
+            "access-control-allow-methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+            "sunset": "Fri, 01 May 2026 00:00:00 GMT",
+            "expires": "Tue, 06 Oct 2026 20:16:15 GMT",
+            "date": "Tue, 06 Oct 2026 20:11:15 GMT",
+            "content-type": "application/json",
+            "vary": "Accept-Encoding,Origin",
+            "last-modified": "Tue, 06 Oct 2026 20:11:15 GMT",
+            "access-control-allow-headers": "Accept, Authorization, Content-Type, X-CSRF-Token, Token, traceparent, tracestate, baggage",
+            "cache-control": "public, max-age=300",
+            "x-envoy-upstream-service-time": "180",
+            "speculation-rules": "\"/cdn-cgi/speculation\"",
+            "cf-ray": "a467506a4c3980d3-EWR",
+            "access-control-allow-origin": "*",
+            "server": "cloudflare"
+          },
+          "mimeType": "application/json",
+          "charset": "",
+          "connectionReused": false,
+          "connectionId": 0,
+          "remoteIPAddress": "172.64.153.51",
+          "remotePort": 443,
+          "fromDiskCache": true,
+          "fromServiceWorker": false,
+          "fromPrefetchCache": false,
+          "encodedDataLength": 0,
+          "timing": {
+            "requestTime": 23918.0748,
+            "proxyStart": -1,
+            "proxyEnd": -1,
+            "dnsStart": -1,
+            "dnsEnd": -1,
+            "connectStart": -1,
+            "connectEnd": -1,
+            "sslStart": -1,
+            "sslEnd": -1,
+            "workerStart": -1,
+            "workerReady": -1,
+            "workerFetchStart": -1,
+            "workerRespondWithSettled": -1,
+            "sendStart": 0.028,
+            "sendEnd": 0.028,
+            "pushStart": 0,
+            "pushEnd": 0,
+            "receiveHeadersStart": 0.249,
+            "receiveHeadersEnd": 0.287
+          },
+          "responseTime": 1791317475291.922,
+          "protocol": "h2",
+          "alternateProtocolUsage": "unspecifiedReason",
+          "securityState": "secure",
+          "securityDetails": {
+            "protocol": "TLS 1.3",
+            "keyExchange": "",
+            "keyExchangeGroup": "X25519MLKEM768",
+            "cipher": "AES_128_GCM",
+            "certificateId": 0,
+            "subjectName": "polymarket.com",
+            "sanList": [
+              "polymarket.com",
+              "*.polymarket.com",
+              "*.perpetuals.polymarket.com"
+            ],
+            "issuer": "WE1",
+            "validFrom": 1788084934,
+            "validTo": 1795864531,
+            "signedCertificateTimestampList": [],
+            "certificateTransparencyCompliance": "unknown",
+            "serverSignatureAlgorithm": 1027,
+            "encryptedClientHello": false
+          }
+        },
+        "hasExtraInfo": false,
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A"
+      }
+    },
+    {
+      "method": "Network.loadingFinished",
+      "params": {
+        "requestId": "30811.4",
+        "timestamp": 23918.084724,
+        "encodedDataLength": 0
+      }
+    },
+    {
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "requestId": "30811.5",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "documentURL": "http://127.0.0.1:60728/",
+        "request": {
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          "method": "GET",
+          "headers": {
+            "sec-ch-ua-platform": "\"macOS\"",
+            "Referer": "http://127.0.0.1:60728/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0"
+          },
+          "mixedContentType": "none",
+          "initialPriority": "High",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "isSameSite": false
+        },
+        "timestamp": 23918.130475,
+        "wallTime": 1791317475.576205,
+        "initiator": {
+          "type": "script",
+          "stack": {
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "4",
+                "url": "",
+                "lineNumber": 23,
+                "columnNumber": 29
+              }
+            ]
+          }
+        },
+        "redirectHasExtraInfo": false,
+        "type": "Fetch",
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A",
+        "hasUserGesture": false
+      }
+    },
+    {
+      "method": "Network.requestWillBeSentExtraInfo",
+      "params": {
+        "requestId": "30811.5",
+        "associatedCookies": [],
+        "headers": {
+          ":authority": "gamma-api.polymarket.com",
+          ":method": "GET",
+          ":path": "/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          ":scheme": "https",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "en-US,en;q=0.9",
+          "cache-control": "max-age=0",
+          "if-modified-since": "Tue, 06 Oct 2026 20:11:15 GMT",
+          "origin": "http://127.0.0.1:60728",
+          "priority": "u=1, i",
+          "referer": "http://127.0.0.1:60728/",
+          "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+        },
+        "connectTiming": {
+          "requestTime": 23918.130692
+        },
+        "clientSecurityState": {
+          "initiatorIsSecureContext": true,
+          "initiatorIPAddressSpace": "Loopback",
+          "localNetworkAccessRequestPolicy": "PermissionBlock"
+        },
+        "siteHasCookieInOtherPartition": false
+      }
+    },
+    {
+      "method": "Network.responseReceivedExtraInfo",
+      "params": {
+        "requestId": "30811.5",
+        "blockedCookies": [],
+        "headers": {
+          "access-control-allow-headers": "Accept, Authorization, Content-Type, X-CSRF-Token, Token, traceparent, tracestate, baggage",
+          "access-control-allow-methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+          "access-control-allow-origin": "*",
+          "access-control-max-age": "2592000",
+          "age": "0",
+          "cache-control": "public, max-age=300",
+          "cf-cache-status": "HIT",
+          "cf-ray": "a467506ebb90012e-EWR",
+          "date": "Tue, 06 Oct 2026 20:11:15 GMT",
+          "deprecation": "true",
+          "expires": "Tue, 06 Oct 2026 20:16:15 GMT",
+          "last-modified": "Tue, 06 Oct 2026 20:11:15 GMT",
+          "server": "cloudflare",
+          "set-cookie": "__cf_bm=1cidOlw3f4BTVifNVrTT80abLP.4PLTuCjlUVtNmJaE-1791317475.634593-1.0.1.1-fGax2CrHP3kkRt.nj45ETvh3Fs6.vsH.5lRYaJCGCuXsYCAHQlNGy4g0fU422_Yv9W77FDia7QruQfC2B_kldjXbIpYikAyrbm4fOk50bEayvR0N7VHMUMhOWylARILh; HttpOnly; SameSite=None; Secure; Path=/; Domain=polymarket.com; Expires=Tue, 06 Oct 2026 20:41:15 GMT",
+          "speculation-rules": "\"/cdn-cgi/speculation\"",
+          "strict-transport-security": "max-age=7776000; includeSubDomains",
+          "sunset": "Fri, 01 May 2026 00:00:00 GMT",
+          "vary": "Accept-Encoding,Origin",
+          "warning": "299 - \"use /events/keyset\"",
+          "x-envoy-upstream-service-time": "180"
+        },
+        "resourceIPAddressSpace": "Public",
+        "statusCode": 304,
+        "cookiePartitionKey": {
+          "topLevelSite": "http://127.0.0.1",
+          "hasCrossSiteAncestor": true
+        },
+        "cookiePartitionKeyOpaque": false,
+        "exemptedCookies": []
+      }
+    },
+    {
+      "method": "Network.responseReceived",
+      "params": {
+        "requestId": "30811.5",
+        "loaderId": "BA67F8EE89B6710A59B0C213D8349F5C",
+        "timestamp": 23918.179893,
+        "type": "Fetch",
+        "response": {
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+          "status": 200,
+          "statusText": "",
+          "headers": {
+            "access-control-max-age": "2592000",
+            "content-encoding": "gzip",
+            "warning": "299 - \"use /events/keyset\"",
+            "cf-cache-status": "HIT",
+            "age": "0",
+            "deprecation": "true",
+            "access-control-allow-methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+            "sunset": "Fri, 01 May 2026 00:00:00 GMT",
+            "expires": "Tue, 06 Oct 2026 20:16:15 GMT",
+            "date": "Tue, 06 Oct 2026 20:11:15 GMT",
+            "last-modified": "Tue, 06 Oct 2026 20:11:15 GMT",
+            "vary": "Accept-Encoding,Origin",
+            "content-type": "application/json",
+            "access-control-allow-headers": "Accept, Authorization, Content-Type, X-CSRF-Token, Token, traceparent, tracestate, baggage",
+            "strict-transport-security": "max-age=7776000; includeSubDomains",
+            "cache-control": "public, max-age=300",
+            "x-envoy-upstream-service-time": "180",
+            "speculation-rules": "\"/cdn-cgi/speculation\"",
+            "cf-ray": "a467506ebb90012e-EWR",
+            "access-control-allow-origin": "*",
+            "server": "cloudflare"
+          },
+          "mimeType": "application/json",
+          "charset": "",
+          "connectionReused": false,
+          "connectionId": 240,
+          "remoteIPAddress": "172.64.153.51",
+          "remotePort": 443,
+          "fromDiskCache": false,
+          "fromServiceWorker": false,
+          "fromPrefetchCache": false,
+          "encodedDataLength": 742,
+          "timing": {
+            "requestTime": 23918.130692,
+            "proxyStart": -1,
+            "proxyEnd": -1,
+            "dnsStart": 0.297,
+            "dnsEnd": 0.313,
+            "connectStart": 0.313,
+            "connectEnd": 23.323,
+            "sslStart": 10.907,
+            "sslEnd": 23.32,
+            "workerStart": -1,
+            "workerReady": -1,
+            "workerFetchStart": -1,
+            "workerRespondWithSettled": -1,
+            "sendStart": 23.404,
+            "sendEnd": 23.46,
+            "pushStart": 0,
+            "pushEnd": 0,
+            "receiveHeadersStart": 48.742,
+            "receiveHeadersEnd": 48.916
+          },
+          "responseTime": 1791317475625.171,
+          "protocol": "h2",
+          "alternateProtocolUsage": "unspecifiedReason",
+          "securityState": "secure",
+          "securityDetails": {
+            "protocol": "TLS 1.3",
+            "keyExchange": "",
+            "keyExchangeGroup": "X25519MLKEM768",
+            "cipher": "AES_128_GCM",
+            "certificateId": 0,
+            "subjectName": "polymarket.com",
+            "sanList": [
+              "polymarket.com",
+              "*.polymarket.com",
+              "*.perpetuals.polymarket.com"
+            ],
+            "issuer": "WE1",
+            "validFrom": 1788084934,
+            "validTo": 1795864531,
+            "signedCertificateTimestampList": [
+              {
+                "status": "Verified",
+                "origin": "Embedded in certificate",
+                "logDescription": "DigiCert 'Wyvern2026h2'",
+                "logId": "C2317E574519A345EE7F38DEB29041EBC7C2215A22BF7FD5B5AD769AD90E52CD",
+                "timestamp": 1788088535354,
+                "hashAlgorithm": "SHA-256",
+                "signatureAlgorithm": "ECDSA",
+                "signatureData": "3045022074EEAF61662462098C1E02B7D5CE84AB11C25CE35F6301456B0C6C768E000A9602210091F9948CA5DA4EFAB469100E0493AC784AC75650D1A9F4E2FF41E44D7398B496"
+              },
+              {
+                "status": "Verified",
+                "origin": "Embedded in certificate",
+                "logDescription": "Google 'Xenon2026h2' log",
+                "logId": "D809553B944F7AFFC816196F944F85ABB0F8FC5E8755260F15D12E72BB454B14",
+                "timestamp": 1788088535372,
+                "hashAlgorithm": "SHA-256",
+                "signatureAlgorithm": "ECDSA",
+                "signatureData": "3046022100FC446D5974A190ED74DE20B8A83EDD164631D3A141BB1904F1E3AC95E6B47A2B022100D70C738C7FE52E84965587137BD96793EEF9B6DD302E72F91DBDF5A69B5753B9"
+              }
+            ],
+            "certificateTransparencyCompliance": "compliant",
+            "serverSignatureAlgorithm": 1027,
+            "encryptedClientHello": false
+          }
+        },
+        "hasExtraInfo": true,
+        "frameId": "21381A4DD789B3EC0F91EAF2F0D8AE4A"
+      }
+    },
+    {
+      "method": "Network.loadingFinished",
+      "params": {
+        "requestId": "30811.5",
+        "timestamp": 23918.188488,
+        "encodedDataLength": 742
+      }
+    }
+  ],
+  "errors": []
+}

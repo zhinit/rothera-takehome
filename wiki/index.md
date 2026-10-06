@@ -1,5 +1,7 @@
 # Research wiki
 
+- [[polymarket-discovery-latency]]: Gamma request budgets, bounded offset concurrency, ordering, filter coverage, and progressive game discovery.
+- [[browser-metadata-caching]]: HTTP response reuse, compact browser metadata storage, freshness limits, and complete refresh reconciliation.
 - [[polymarket-price-correctness]]: Tick increments, decimal precision, spread arithmetic, empty-side limits, missing trade seeds, and conflicting source contracts.
 - [[price-cell-flashes]]: Repeated price changes, timer replacement, CSS animation restart, completion events, and timing limits.
 - [[react-connection-lifecycle]]: Socket ownership, Effect cleanup, duplicate connections, current callback values, and stale messages after game switches.

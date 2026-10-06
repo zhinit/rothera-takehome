@@ -1,0 +1,191 @@
+{
+  "scenario": {
+    "name": "tag-id-450",
+    "concurrency": 3,
+    "params": {
+      "tag_id": "450"
+    }
+  },
+  "timestamp": "2026-10-06T20:09:03.678Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "origin": "http://127.0.0.1:60469",
+  "totalMs": 2301,
+  "firstGameMs": 1002.0999999977648,
+  "terminal": 500,
+  "pages": [
+    {
+      "offset": 0,
+      "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0&tag_id=450",
+      "status": 200,
+      "headers": [
+        [
+          "cache-control",
+          "public, max-age=300"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "expires",
+          "Tue, 06 Oct 2026 20:14:01 GMT"
+        ],
+        [
+          "last-modified",
+          "Tue, 06 Oct 2026 20:09:01 GMT"
+        ]
+      ],
+      "headersMs": 329.70000000298023,
+      "bodyMs": 456.20000000298023,
+      "parseMs": 22.699999999254942,
+      "elapsedMs": 479.0999999977648,
+      "count": 100,
+      "gameCandidates": 0
+    },
+    {
+      "offset": 100,
+      "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=100&tag_id=450",
+      "status": 200,
+      "headers": [
+        [
+          "cache-control",
+          "public, max-age=300"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "expires",
+          "Tue, 06 Oct 2026 20:14:01 GMT"
+        ],
+        [
+          "last-modified",
+          "Tue, 06 Oct 2026 20:09:01 GMT"
+        ]
+      ],
+      "headersMs": 222.89999999850988,
+      "bodyMs": 226.09999999776483,
+      "parseMs": 4.199999999254942,
+      "elapsedMs": 230.80000000074506,
+      "count": 100,
+      "gameCandidates": 0
+    },
+    {
+      "offset": 200,
+      "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=200&tag_id=450",
+      "status": 200,
+      "headers": [
+        [
+          "cache-control",
+          "public, max-age=300"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "expires",
+          "Tue, 06 Oct 2026 20:14:01 GMT"
+        ],
+        [
+          "last-modified",
+          "Tue, 06 Oct 2026 20:09:01 GMT"
+        ]
+      ],
+      "headersMs": 251.40000000223517,
+      "bodyMs": 302.4000000022352,
+      "parseMs": 2.699999999254942,
+      "elapsedMs": 305.5,
+      "count": 100,
+      "gameCandidates": 0
+    },
+    {
+      "offset": 300,
+      "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=300&tag_id=450",
+      "status": 200,
+      "headers": [
+        [
+          "cache-control",
+          "public, max-age=300"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "expires",
+          "Tue, 06 Oct 2026 20:14:02 GMT"
+        ],
+        [
+          "last-modified",
+          "Tue, 06 Oct 2026 20:09:02 GMT"
+        ]
+      ],
+      "headersMs": 296.80000000074506,
+      "bodyMs": 503.30000000074506,
+      "parseMs": 19.600000001490116,
+      "elapsedMs": 1002.0999999977648,
+      "count": 100,
+      "gameCandidates": 1
+    },
+    {
+      "offset": 400,
+      "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=400&tag_id=450",
+      "status": 200,
+      "headers": [
+        [
+          "cache-control",
+          "public, max-age=300"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "expires",
+          "Tue, 06 Oct 2026 20:14:02 GMT"
+        ],
+        [
+          "last-modified",
+          "Tue, 06 Oct 2026 20:09:02 GMT"
+        ]
+      ],
+      "headersMs": 874,
+      "bodyMs": 1767.699999999255,
+      "parseMs": 52.19999999925494,
+      "elapsedMs": 2300.89999999851,
+      "count": 100,
+      "gameCandidates": 41
+    },
+    {
+      "offset": 500,
+      "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=500&tag_id=450",
+      "status": 200,
+      "headers": [
+        [
+          "cache-control",
+          "public, max-age=300"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "expires",
+          "Tue, 06 Oct 2026 20:14:02 GMT"
+        ],
+        [
+          "last-modified",
+          "Tue, 06 Oct 2026 20:09:02 GMT"
+        ]
+      ],
+      "headersMs": 400.4000000022352,
+      "bodyMs": 684.6999999992549,
+      "parseMs": 11.800000000745058,
+      "elapsedMs": 1175.8999999985099,
+      "count": 58,
+      "gameCandidates": 1
+    }
+  ]
+}

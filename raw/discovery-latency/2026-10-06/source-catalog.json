@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-06",
+  "approved": true,
+  "sources": [
+    {
+      "name": "polymarket-gamma-rate-limits-2026",
+      "url": "https://docs.polymarket.com/api-reference/rate-limits",
+      "markdown_url": "https://docs.polymarket.com/api-reference/rate-limits.md",
+      "html": "raw/html/polymarket-gamma-rate-limits-2026.html",
+      "markdown": "raw/md/polymarket-gamma-rate-limits-2026.md",
+      "method": "Full HTML plus full upstream Markdown. Source Markdown is preserved byte-for-byte, including frontmatter, macros, and examples."
+    },
+    {
+      "name": "mdn-web-storage-2026",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API",
+      "markdown_url": "https://raw.githubusercontent.com/mdn/content/main/files/en-us/web/api/web_storage_api/index.md",
+      "html": "raw/html/mdn-web-storage-2026.html",
+      "markdown": "raw/md/mdn-web-storage-2026.md",
+      "method": "Full HTML plus full upstream Markdown. Source Markdown is preserved byte-for-byte, including frontmatter, macros, and examples."
+    },
+    {
+      "name": "mdn-request-cache-2026",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Request/cache",
+      "markdown_url": "https://raw.githubusercontent.com/mdn/content/main/files/en-us/web/api/request/cache/index.md",
+      "html": "raw/html/mdn-request-cache-2026.html",
+      "markdown": "raw/md/mdn-request-cache-2026.md",
+      "method": "Full HTML plus full upstream Markdown. Source Markdown is preserved byte-for-byte, including frontmatter, macros, and examples."
+    },
+    {
+      "name": "mdn-cache-api-2026",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Cache",
+      "markdown_url": "https://raw.githubusercontent.com/mdn/content/main/files/en-us/web/api/cache/index.md",
+      "html": "raw/html/mdn-cache-api-2026.html",
+      "markdown": "raw/md/mdn-cache-api-2026.md",
+      "method": "Full HTML plus full upstream Markdown. Source Markdown is preserved byte-for-byte, including frontmatter, macros, and examples."
+    },
+    {
+      "name": "mdn-using-indexeddb-2026",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB",
+      "markdown_url": "https://raw.githubusercontent.com/mdn/content/main/files/en-us/web/api/indexeddb_api/using_indexeddb/index.md",
+      "html": "raw/html/mdn-using-indexeddb-2026.html",
+      "markdown": "raw/md/mdn-using-indexeddb-2026.md",
+      "method": "Full HTML plus full upstream Markdown. Source Markdown is preserved byte-for-byte, including frontmatter, macros, and examples."
+    }
+  ],
+  "reused": [
+    "raw/md/polymarket-gamma-list-events-2026.md",
+    "raw/md/polymarket-discover-markets-2026.md"
+  ],
+  "archiveCommand": "curl -L --fail --silent --show-error --max-time 45 '<url>' -o '<path>'",
+  "academicSearch": {
+    "query": "site:arxiv.org web latency parallel requests progressive loading caching",
+    "decision": "Searched during discovery. No academic source selected or archived. Official endpoint contracts and direct-browser probes address the project-specific questions."
+  }
+}
