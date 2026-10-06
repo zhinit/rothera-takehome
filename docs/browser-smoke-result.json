@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-06T18:25:53.802Z",
+  "origin": "http://127.0.0.1:5173",
+  "initial": {
+    "title": "Buccaneers vs. Cowboys",
+    "games": 43,
+    "rows": 86,
+    "quotedBids": 86,
+    "horizontalOverflow": false,
+    "styled": true
+  },
+  "mobile": {
+    "horizontalOverflow": false,
+    "selectVisible": true,
+    "tableScrollable": true
+  },
+  "gammaOffsets": [
+    "0",
+    "0",
+    "100",
+    "200",
+    "300",
+    "400",
+    "500"
+  ],
+  "sockets": 2,
+  "received": {
+    "book": 260,
+    "price_change": 0,
+    "last_trade_price": 0,
+    "tick_size_change": 0,
+    "PONG": 1
+  },
+  "sentFrames": 7,
+  "errors": []
+}

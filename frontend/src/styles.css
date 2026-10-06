@@ -1,0 +1,903 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root {
+  font-family:'DM Sans',sans-serif;
+  color:#202a32;
+  background:#f5f6f8;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  font-weight:400;
+  font-size:14px;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+}
+
+button,select {
+  font:inherit;
+}
+
+button,a,select {
+  -webkit-tap-highlight-color:transparent;
+}
+
+button {
+  cursor:pointer;
+}
+
+a {
+  color:inherit;
+}
+
+button:focus-visible,a:focus-visible,select:focus-visible,[tabindex]:focus-visible {
+  outline:3px solid #31826b;
+  outline-offset:4px;
+}
+
+button {
+  color:inherit;
+}
+
+h1,h2,p {
+  margin:0;
+}
+
+.sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+.skip-link {
+  position:fixed;
+  top:-80px;
+  left:16px;
+  padding:12px;
+  background:#fff;
+  z-index:10;
+}
+
+.skip-link:focus {
+  top:12px;
+}
+
+.topbar {
+  height:76px;
+  background:#fff;
+  border-bottom:1px solid #e4e8eb;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 34px;
+  position:sticky;
+  top:0;
+  z-index:3;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  font-size:18px;
+  text-decoration:none;
+}
+
+.brand img {
+  width:32px;
+  height:32px;
+}
+
+.brand-divider {
+  height:21px;
+  width:1px;
+  background:#dfe5e7;
+  margin:0 9px;
+}
+
+.brand-product {
+  font-size:14px;
+  color:#73808a;
+  font-weight:450;
+  letter-spacing:0;
+}
+
+.topbar-right {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.sport-pill {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  border:1px solid #dfe5e7;
+  border-radius:5px;
+  padding:5px 9px;
+}
+
+.connection-status {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#77818b;
+  font-size:12px;
+  font-weight:550;
+  white-space:nowrap;
+}
+
+.connection-status i {
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#bd9143;
+}
+
+.connection-status.is-live {
+  color:#278063;
+}
+
+.connection-status.is-live i {
+  background:#38a77b;
+  box-shadow:0 0 0 4px #eaf7f0;
+}
+
+.workspace {
+  max-width:1640px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:268px minmax(0,1fr);
+}
+
+.game-sidebar {
+  border-right:1px solid #e2e6e9;
+  position:sticky;
+  top:76px;
+  height:calc(100dvh - 76px);
+  display:flex;
+  flex-direction:column;
+  background:#fafbfc;
+  padding-top:30px;
+}
+
+.sidebar-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 24px;
+}
+
+.sidebar-heading h2 {
+  font-size:16px;
+  font-weight:650;
+}
+
+.count {
+  background:#eaf0ed;
+  color:#527364;
+  border-radius:5px;
+  padding:3px 7px;
+  font-size:11px;
+  font-weight:600;
+  font-family:'IBM Plex Mono',monospace;
+}
+
+.sidebar-subtitle {
+  font-size:12px;
+  color:#818b94;
+  margin:6px 24px 23px;
+}
+
+.game-list {
+  overflow-y:auto;
+  padding:0 12px 20px;
+  scrollbar-width:thin;
+  scrollbar-color:#d3ddd8 transparent;
+}
+
+.game-option {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  width:100%;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:transparent;
+  text-align:left;
+  padding:17px 12px;
+  margin-bottom:6px;
+  transition:background .15s;
+}
+
+.game-option:hover {
+  background:#f0f3f2;
+}
+
+.game-option.selected {
+  border-color:#c9ddd2;
+  background:#edf5f0;
+  box-shadow:inset 3px 0 #398260;
+}
+
+.game-option-date {
+  color:#7b8790;
+  font-size:10px;
+  letter-spacing:.15px;
+}
+
+.game-option.selected .game-option-date {
+  color:#648571;
+}
+
+.game-option-title {
+  font-size:12px;
+  font-weight:650;
+  display:flex;
+  gap:5px;
+  justify-content:space-between;
+  width:100%;
+}
+
+.game-option-title>span {
+  color:#91a899;
+  visibility:hidden;
+}
+
+.game-option.selected .game-option-title>span {
+  visibility:visible;
+}
+
+.game-option-markets {
+  color:#7c8982;
+  font-size:11px;
+}
+
+.sidebar-footer {
+  margin-top:auto;
+  border-top:1px solid #e6eae7;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:11px;
+  color:#59666d;
+}
+
+.sidebar-footer span:not(.source-icon) {
+  display:block;
+  margin-top:4px;
+  color:#89939a;
+  font-size:10px;
+}
+
+.source-icon {
+  font-style:italic;
+  font-size:19px;
+  font-weight:700;
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  background:#e9edf3;
+  border-radius:7px;
+  color:#697b9b;
+}
+
+.mobile-selector {
+  display:none;
+}
+
+main {
+  min-width:0;
+  padding:38px 42px 24px;
+}
+
+.full-width {
+  grid-column:1/-1;
+  min-height:calc(100vh - 76px);
+}
+
+.page-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:30px;
+}
+
+.eyebrow {
+  font-size:9px;
+  letter-spacing:1.8px;
+  font-weight:650;
+  color:#89938d;
+}
+
+.page-heading h1 {
+  font-size:36px;
+  font-weight:550;
+  letter-spacing:-1.5px;
+  line-height:1.35;
+  margin:6px 0;
+}
+
+.heading-dot {
+  color:#4b966a;
+}
+
+.page-description {
+  font-size:12px;
+  color:#7b8690;
+  margin-top:3px;
+}
+
+.season-label {
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  letter-spacing:1px;
+  color:#8d969d;
+  align-self:flex-start;
+  padding-top:9px;
+}
+
+.matchup {
+  background:#fff;
+  border:1px solid #dfe5e7;
+  border-radius:10px;
+  padding:23px 25px;
+  margin-bottom:26px;
+  position:relative;
+  overflow:hidden;
+}
+
+.matchup::before {
+  content:'';
+  position:absolute;
+  width:3px;
+  left:0;
+  top:23px;
+  bottom:23px;
+  background:#76a88b;
+  border-radius:0 2px 2px 0;
+}
+
+.matchup-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.matchup-top a {
+  font-size:10px;
+  color:#7c8984;
+  text-decoration:none;
+}
+
+.matchup-top a:hover {
+  color:#286d50;
+  text-decoration:underline;
+}
+
+.matchup-top a span {
+  margin-left:5px;
+}
+
+.matchup h2 {
+  font-size:25px;
+  font-weight:550;
+  letter-spacing:-.7px;
+  margin:19px 0 15px;
+}
+
+.matchup-bottom {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  font-size:11px;
+  color:#79858e;
+}
+
+.matchup-bottom>span {
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  white-space:nowrap;
+}
+
+.matchup-bottom b {
+  font-weight:400;
+  padding:0 7px;
+  color:#acb5ba;
+}
+
+.live-label {
+  color:#328361;
+}
+
+.connection-notice {
+  padding:13px 18px;
+  border:1px solid #eadbb8;
+  background:#fff9eb;
+  color:#886b26;
+  border-radius:7px;
+  margin-bottom:16px;
+  font-size:12px;
+}
+
+.market-panel {
+  background:white;
+  border:1px solid #dfe5e7;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.panel-heading {
+  padding:22px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.panel-heading h2 {
+  font-size:15px;
+  font-weight:650;
+  letter-spacing:-.25px;
+}
+
+.panel-heading p {
+  font-size:11px;
+  color:#8c959c;
+  margin-top:5px;
+}
+
+.unit-label {
+  font-family:'IBM Plex Mono',monospace;
+  color:#8b959e;
+  font-size:9px;
+  border:1px solid #e7ebed;
+  border-radius:4px;
+  padding:5px 7px;
+}
+
+.table-scroll {
+  overflow:auto;
+  max-height:calc(100dvh - 325px);
+  min-height:275px;
+  scrollbar-width:thin;
+  scrollbar-color:#d3ddd8 transparent;
+}
+
+table {
+  border-collapse:separate;
+  border-spacing:0;
+  width:100%;
+  font-size:12px;
+  table-layout:fixed;
+}
+
+thead {
+  position:sticky;
+  top:0;
+  z-index:1;
+}
+
+thead th {
+  font-size:10px;
+  font-weight:500;
+  color:#7c8790;
+  background:#f9fafb;
+  border-top:1px solid #edf0f2;
+  border-bottom:1px solid #e8edef;
+  padding:13px 18px;
+  text-align:right;
+  white-space:nowrap;
+}
+
+thead th:first-child {
+  width:44%;
+  padding-left:25px;
+  text-align:left;
+}
+
+thead th:last-child {
+  padding-right:25px;
+}
+
+.section-row th {
+  text-align:left;
+  font-weight:650;
+  font-size:10px;
+  color:#4b5c59;
+  padding:13px 25px;
+  background:#f3f6f5;
+  border-bottom:1px solid #e7edeb;
+}
+
+.section-row th>span {
+  font-weight:400;
+  color:#8a9691;
+  margin-left:10px;
+  font-size:9px;
+}
+
+.market-start:not(:first-child) th,.market-start td {
+  border-top:1px solid #eef1f2;
+}
+
+tbody tr:not(.section-row):hover {
+  background:#fafcfb;
+}
+
+tbody th[scope=row] {
+  font-weight:400;
+  text-align:left;
+  padding:12px 10px 12px 25px;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-height:66px;
+}
+
+.outcome-icon {
+  width:31px;
+  height:31px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  background:#eef2f6;
+  color:#647d94;
+  font-size:9px;
+  letter-spacing:.2px;
+  font-weight:700;
+}
+
+.market-start .outcome-icon {
+  background:#f5efeb;
+  color:#a37961;
+}
+
+.outcome-icon.total-icon {
+  background:#f0f4f1;
+  color:#769482;
+  font-size:17px;
+  font-weight:400;
+}
+
+.outcome-copy {
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+
+.outcome-name {
+  font-size:12px;
+  font-weight:550;
+}
+
+.market-question {
+  font-size:9px;
+  color:#929da4;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.price-cell {
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  font-variant-numeric:tabular-nums;
+  text-align:right;
+  padding:12px 18px;
+  white-space:nowrap;
+}
+
+.price-cell:last-child {
+  padding-right:25px;
+}
+
+.price-cell.bid {
+  color:#388465;
+}
+
+.price-cell.ask {
+  color:#b77964;
+}
+
+.price-cell.last {
+  color:#4d5d6a;
+}
+
+.price-cell.spread {
+  color:#8c97a1;
+}
+
+.price-cell.spread>span {
+  background:#f4f6f8;
+  border-radius:4px;
+  padding:4px 6px;
+  font-size:10px;
+}
+
+.missing-price {
+  color:#bac3c9;
+}
+
+.table-footer {
+  border-top:1px solid #e6ebed;
+  padding:14px 25px;
+  display:flex;
+  justify-content:space-between;
+  color:#8d999f;
+  font-size:9px;
+}
+
+.table-footer>span {
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.table-footer i {
+  width:5px;
+  height:5px;
+  border-radius:1px;
+  display:inline-block;
+  margin-left:9px;
+}
+
+.legend-up {
+  background:#76b794;
+}
+
+.legend-down {
+  background:#d99494;
+}
+
+.empty-market {
+  padding:22px 25px;
+  color:#85908e;
+}
+
+.main-footer {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  color:#9ba3aa;
+  font-size:9px;
+  margin-top:20px;
+}
+
+.state-panel {
+  border:1px solid #e0e6e7;
+  border-radius:10px;
+  background:#fff;
+  min-height:380px;
+  padding:60px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  text-align:center;
+}
+
+.state-panel h2 {
+  font-size:21px;
+  font-weight:550;
+}
+
+.state-panel p {
+  color:#7b8790;
+  font-size:13px;
+  max-width:460px;
+  line-height:1.6;
+}
+
+.state-symbol {
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#eef4f0;
+  font-size:22px;
+  color:#598468;
+}
+
+.primary-button {
+  background:#24543f;
+  border:0;
+  border-radius:6px;
+  padding:10px 20px;
+  color:#fff;
+  font-size:12px;
+  margin-top:6px;
+}
+
+.primary-button:hover {
+  background:#173f2d;
+}
+
+.loader {
+  width:26px;
+  height:26px;
+  border:2px solid #e4ece7;
+  border-top-color:#568d6f;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+@media(min-width:1500px) {
+  main {
+    padding-left:60px;
+    padding-right:60px;
+  }
+  .table-scroll {
+    max-height:calc(100dvh - 350px);
+  }
+}
+
+@media(max-width:1100px) {
+  .workspace {
+    grid-template-columns:235px minmax(0,1fr);
+  }
+  main {
+    padding:30px 25px;
+  }
+  .game-option-title {
+    font-size:11px;
+  }
+  .sidebar-heading {
+    padding:0 20px;
+  }
+  .matchup-bottom {
+    flex-direction:column;
+    gap:10px;
+  }
+  thead th {
+    padding:13px 10px;
+  }
+  thead th:first-child {
+    width:40%;
+  }
+  .price-cell {
+    padding:12px 10px;
+  }
+  .season-label {
+    display:none;
+  }
+  .table-scroll {
+    max-height:65vh;
+  }
+  table {
+    min-width:570px;
+  }
+  .matchup h2 {
+    font-size:23px;
+  }
+}
+
+@media(max-width:760px) {
+  .topbar {
+    height:64px;
+    padding:0 19px;
+  }
+  .brand {
+    font-size:15px;
+    letter-spacing:1.5px;
+  }
+  .brand img {
+    width:28px;
+    height:28px;
+  }
+  .brand-product,.brand-divider,.sport-pill {
+    display:none;
+  }
+  .connection-status {
+    font-size:10px;
+  }
+  .workspace {
+    display:block;
+  }
+  .game-sidebar {
+    position:static;
+    height:auto;
+    padding:18px 20px;
+    border-right:0;
+    border-bottom:1px solid #e2e6e9;
+    background:#fff;
+  }
+  .sidebar-heading,.sidebar-subtitle,.game-list,.sidebar-footer {
+    display:none;
+  }
+  .mobile-selector {
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+  .mobile-selector label {
+    font-size:10px;
+    color:#738379;
+  }
+  .mobile-selector select {
+    padding:10px 9px;
+    background:#f6f8f7;
+    border:1px solid #d8e1dc;
+    border-radius:5px;
+    color:#344c3e;
+    width:100%;
+    font-size:12px;
+  }
+  main {
+    padding:25px 16px;
+  }
+  .page-heading {
+    margin-bottom:23px;
+  }
+  .page-heading h1 {
+    font-size:31px;
+  }
+  .eyebrow {
+    font-size:8px;
+  }
+  .page-description {
+    font-size:11px;
+  }
+  .matchup {
+    padding:20px;
+    margin-bottom:20px;
+  }
+  .matchup h2 {
+    font-size:22px;
+  }
+  .matchup-top a {
+    font-size:9px;
+  }
+  .panel-heading {
+    padding:20px;
+  }
+  .table-scroll {
+    max-height:70vh;
+  }
+  .table-footer {
+    padding:13px 16px;
+  }
+  .main-footer {
+    flex-direction:column;
+    gap:7px;
+    font-size:9px;
+  }
+  .state-panel {
+    min-height:330px;
+  }
+  .table-scroll:focus-visible {
+    outline-offset:-3px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .loader {
+    animation:none;
+  }
+  .game-option {
+    transition:none;
+  }
+}
