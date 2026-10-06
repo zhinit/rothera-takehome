@@ -14,6 +14,20 @@ function stringArray(value: unknown): string[] | null {
   }
 }
 
+function matchupTitle(teams: unknown, fallback: string): string {
+  if (!Array.isArray(teams)) return fallback
+  const entries = teams.filter(isRecord)
+  function teamName(ordering: 'away' | 'home'): string | null {
+    const team = entries.find((entry) => entry.ordering === ordering)
+    if (typeof team?.alias === 'string' && team.alias.trim()) return team.alias.trim()
+    if (typeof team?.name === 'string' && team.name.trim()) return team.name.trim()
+    return null
+  }
+  const away = teamName('away')
+  const home = teamName('home')
+  return away && home ? `${away} at ${home}` : fallback
+}
+
 function parseMarket(value: unknown, title: string): Market | null {
   if (!isRecord(value) || typeof value.id !== 'string' || typeof value.question !== 'string')
     return null
@@ -68,7 +82,14 @@ export function parseGame(value: unknown): Game | null {
     typeof value.startTime === 'string' && Number.isFinite(Date.parse(value.startTime))
       ? value.startTime
       : null
-  return { id: value.id, slug: value.slug, title, startTime, live: value.live === true, markets }
+  return {
+    id: value.id,
+    slug: value.slug,
+    title: matchupTitle(value.teams, title),
+    startTime,
+    live: value.live === true,
+    markets,
+  }
 }
 
 export async function fetchGames(signal: AbortSignal): Promise<Game[]> {

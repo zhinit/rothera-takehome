@@ -2,6 +2,8 @@
 
 ## 2026-10-06
 
+- GPT-6 (Codex): Used Gamma team ordering metadata to display matchups as Away Team at Home Team throughout the app. Preserved original titles for market matching and as a fallback when team metadata is incomplete. Added parsing and UI coverage.
+
 - GPT-6 (Codex): Removed the redundant subtitle beneath Market prices and its unused wrapper and styles.
 
 - GPT-6 (Codex): Removed the market table's fixed minimum width, allowed content-sized columns, and tightened cell padding in narrow panels to improve split-screen layouts while preserving the sidebar's original breakpoint.

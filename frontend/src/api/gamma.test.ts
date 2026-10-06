@@ -19,6 +19,50 @@ const game = {
 afterEach(() => vi.unstubAllGlobals())
 
 describe('game discovery', () => {
+  it('orders the displayed matchup by home/away metadata while matching original market questions', () => {
+    const result = parseGame({
+      ...game,
+      teams: [
+        { alias: 'Chiefs', ordering: 'home' },
+        { alias: 'Dolphins', ordering: 'away' },
+      ],
+      markets: [...game.markets, market('Chiefs vs. Dolphins: O/U 43.5', '2')],
+    })
+    expect(result?.title).toBe('Dolphins at Chiefs')
+    expect(result?.markets.map((item) => item.kind)).toEqual(['moneyline', 'total'])
+  })
+
+  it('uses full team names when aliases are unavailable', () => {
+    expect(
+      parseGame({
+        ...game,
+        teams: [
+          { name: 'Kansas City Chiefs', alias: ' ', ordering: 'away' },
+          { name: 'Miami Dolphins', ordering: 'home' },
+        ],
+      })?.title,
+    ).toBe('Kansas City Chiefs at Miami Dolphins')
+  })
+
+  it.each([
+    undefined,
+    null,
+    {},
+    [],
+    [null, 'invalid'],
+    [{ alias: 'Chiefs', ordering: 'away' }],
+    [
+      { alias: 'Chiefs', ordering: null },
+      { alias: 'Dolphins', ordering: null },
+    ],
+    [
+      { alias: 123, ordering: 'away' },
+      { alias: 'Dolphins', ordering: 'home' },
+    ],
+  ])('preserves the original title when team metadata is incomplete: %j', (teams) => {
+    expect(parseGame({ ...game, teams })?.title).toBe(game.title)
+  })
+
   it('keeps the moneyline and every exact full-game total, sorted numerically', () => {
     const result = parseGame({
       ...game,

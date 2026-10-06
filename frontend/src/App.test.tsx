@@ -17,7 +17,7 @@ vi.mock('./api/marketStream', () => ({
 const game: Game = {
   id: '1',
   slug: 'nfl-kc-mia-2026-09-27',
-  title: 'Chiefs vs. Dolphins',
+  title: 'Chiefs at Dolphins',
   startTime: '2026-09-27T17:00:00Z',
   live: false,
   markets: [
@@ -63,6 +63,12 @@ describe('dashboard states', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Network unavailable')
     fireEvent.click(screen.getByRole('button', { name: 'Try again' }))
     expect(await screen.findByRole('heading', { name: game.title })).toBeInTheDocument()
+    expect(screen.getByRole('option', { name: /Chiefs at Dolphins/ })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Chiefs at Dolphins/ })).toBeInTheDocument()
+    expect(screen.getByRole('table')).toHaveAccessibleName(
+      'Chiefs at Dolphins: prices for every game winner and over/under outcome',
+    )
+    expect(screen.queryByText(/vs\./)).not.toBeInTheDocument()
     await waitFor(() => expect(connection.setAssets).toHaveBeenLastCalledWith(['1', '2']))
   })
 
@@ -70,7 +76,7 @@ describe('dashboard states', () => {
     const second = {
       ...game,
       id: '2',
-      title: 'Bills vs. Rams',
+      title: 'Bills at Rams',
       markets: [
         {
           ...game.markets[0],
