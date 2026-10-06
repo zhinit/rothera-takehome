@@ -1,0 +1,16 @@
+<!doctype html><pre id="out">pending</pre><script>
+(async()=>{
+ const result={origin:location.origin}; const out=document.querySelector('#out');
+ const show=()=>out.textContent=JSON.stringify(result);
+ try {
+  const response=await fetch('https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0',{credentials:'omit'});
+  const events=await response.json(); result.gamma={status:response.status,count:events.length}; show();
+  const market=events.flatMap(e=>e.markets||[]).find(m=>m.clobTokenIds&&!m.closed);
+  const ids=JSON.parse(market.clobTokenIds); result.sampleMarket=market.question;
+  const socket=new WebSocket('wss://ws-subscriptions-clob.polymarket.com/ws/market');
+  socket.onopen=()=>{result.websocket='open';socket.send(JSON.stringify({assets_ids:ids,type:'market',initial_dump:true}));show()};
+  socket.onmessage=e=>{result.websocket='received';result.message=e.data.slice(0,500);show();socket.close()};
+  socket.onerror=()=>{result.websocket='error';show()};
+  setTimeout(()=>{if(!result.websocket)result.websocket='timeout';show();socket.close()},12000);
+ }catch(e){result.error=String(e);show()}
+})();</script>

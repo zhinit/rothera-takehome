@@ -1,0 +1,79 @@
+{
+  "retrieved_at": "2026-10-06T17:42:27.602757+00:00",
+  "sources": [
+    {
+      "name": "react-use-effect-2026",
+      "url": "https://react.dev/reference/react/useEffect",
+      "markdown_url": "https://raw.githubusercontent.com/reactjs/react.dev/main/src/content/reference/react/useEffect.md",
+      "format": "Full React HTML and repository Markdown fetched directly, without content edits.",
+      "html_bytes": 598406,
+      "html_sha256": "0c0193ae759d0678037480f2666c4b7f4fc134b4ecc0a43092a59aad1870e3ae",
+      "markdown_bytes": 65342,
+      "markdown_sha256": "d4fd102c75df4194f5fa4eae8387f3a0aa7b4ba773c3a5ba29e41bf997a61cdb"
+    },
+    {
+      "name": "react-effect-lifecycle-2026",
+      "url": "https://react.dev/learn/lifecycle-of-reactive-effects",
+      "markdown_url": "https://raw.githubusercontent.com/reactjs/react.dev/main/src/content/learn/lifecycle-of-reactive-effects.md",
+      "format": "Full React HTML and repository Markdown fetched directly, without content edits.",
+      "html_bytes": 440514,
+      "html_sha256": "35aae1e28a1eb8f152dca9092188569ccf8bb85ab83ea9802d68ac50a62118a7",
+      "markdown_bytes": 72033,
+      "markdown_sha256": "cc98721c64605d0077cb5e3c7a18b427b8f1f6f882665ef12f57f79711785892"
+    },
+    {
+      "name": "react-synchronizing-effects-2026",
+      "url": "https://react.dev/learn/synchronizing-with-effects",
+      "markdown_url": "https://raw.githubusercontent.com/reactjs/react.dev/main/src/content/learn/synchronizing-with-effects.md",
+      "format": "Full React HTML and repository Markdown fetched directly, without content edits.",
+      "html_bytes": 511854,
+      "html_sha256": "a6c139c34b6237fe9ddc08c60948d4ffacedb377500cca05801c0c7eb56657f6",
+      "markdown_bytes": 62008,
+      "markdown_sha256": "75cd806a4f3bcf9ef045533b54fb2b91847c8c361dfd9432a49c94c20c153c7e"
+    },
+    {
+      "name": "react-use-ref-2026",
+      "url": "https://react.dev/reference/react/useRef",
+      "markdown_url": "https://raw.githubusercontent.com/reactjs/react.dev/main/src/content/reference/react/useRef.md",
+      "format": "Full React HTML and repository Markdown fetched directly, without content edits.",
+      "html_bytes": 271312,
+      "html_sha256": "eca61bbfa2eab5419d4a930defc30b43bc743bcb7a192b9871267a3ca8c4b361",
+      "markdown_bytes": 17114,
+      "markdown_sha256": "99f33fa0551558fbb8b9feb2062cb58e4d10749ac48c8a5ca0c56863794c00f6"
+    },
+    {
+      "name": "react-separating-events-effects-2026",
+      "url": "https://react.dev/learn/separating-events-from-effects",
+      "markdown_url": "https://raw.githubusercontent.com/reactjs/react.dev/main/src/content/learn/separating-events-from-effects.md",
+      "format": "Full React HTML and repository Markdown fetched directly, without content edits.",
+      "html_bytes": 422384,
+      "html_sha256": "8e466629668005e3bc9d9da455d7f1c1b6677097ebf948086345c0305f9f7498",
+      "markdown_bytes": 53048,
+      "markdown_sha256": "0754d3d3efd767594159e1d7214bcffd3e3903c2e340d80777886ecd3ab0994e"
+    },
+    {
+      "name": "react-use-effect-event-2026",
+      "url": "https://react.dev/reference/react/useEffectEvent",
+      "markdown_url": "https://raw.githubusercontent.com/reactjs/react.dev/main/src/content/reference/react/useEffectEvent.md",
+      "format": "Full React HTML and repository Markdown fetched directly, without content edits.",
+      "html_bytes": 307017,
+      "html_sha256": "b91b1464fa2ab003779caf3d1354186a99dc1fc94f38ce3d757dec92a9237e5e",
+      "markdown_bytes": 16504,
+      "markdown_sha256": "6ca99cfea423a2aa26801f801b83de57c61c81741e3a739fb9ca2721a4714d1d"
+    },
+    {
+      "name": "whatwg-websockets-standard-full-2026",
+      "url": "https://websockets.spec.whatwg.org/",
+      "format": "Full original HTML and Pandoc GFM conversion. The temporary conversion input replaces main tags with div tags so Pandoc includes the header, abstract, indexes, and references as well as the normative body. Text was not summarized.",
+      "conversion_command": "pandoc --from=html --to=gfm --wrap=none /private/tmp/rothera-websockets-full.html -o raw/md/whatwg-websockets-standard-full-2026.md",
+      "html_bytes": 291325,
+      "html_sha256": "a3cfd05d5fbb7617a052563ec71d6429a5c2a99f18d1afe972aaf64deab7228f",
+      "markdown_bytes": 143003,
+      "markdown_sha256": "e11812d90fd2d93162bd9562fdaaac8280678ed018154aae114deb45b966b509"
+    }
+  ],
+  "retained_conversion_attempt": {
+    "name": "whatwg-websockets-standard-2026",
+    "status": "Immutable initial conversion retained. Pandoc selected only the main element, omitting front matter and appendices. Cite the full archive instead."
+  }
+}

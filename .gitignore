@@ -1,5 +1,6 @@
 # Archived wiki sources
-/raw/
+/raw/html/
+/raw/md/
 
 # Dependencies and package manager caches
 node_modules/

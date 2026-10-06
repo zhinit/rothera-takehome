@@ -1,0 +1,284 @@
+{
+  "startedAt": "2026-10-06T17:27:57.403Z",
+  "finishedAt": "2026-10-06T17:29:53.112Z",
+  "origin": "http://127.0.0.1:64635",
+  "events": [
+    {
+      "slug": "nfl-tb-dal-2026-10-09",
+      "markets": 43,
+      "assets": 86
+    },
+    {
+      "slug": "nfl-bal-atl-2026-10-12",
+      "markets": 43,
+      "assets": 86
+    }
+  ],
+  "frame_count": 513,
+  "json_container_counts": {
+    "list": 5,
+    "dict": 491
+  },
+  "message_counts": {
+    "switch": {
+      "book": 258,
+      "price_change": 40,
+      "PONG": 6
+    },
+    "no-heartbeat": {
+      "book": 86,
+      "price_change": 186
+    },
+    "no-initial-dump": {
+      "price_change": 155,
+      "PONG": 9
+    },
+    "reconnect": {
+      "book": 86,
+      "price_change": 110,
+      "PONG": 2
+    }
+  },
+  "observed_keys": {
+    "book": [
+      "asks",
+      "asset_id",
+      "bids",
+      "event_type",
+      "hash",
+      "last_trade_price",
+      "market",
+      "tick_size",
+      "timestamp"
+    ],
+    "price_change": [
+      "event_type",
+      "market",
+      "price_changes",
+      "timestamp"
+    ],
+    "price_change.item": [
+      "asset_id",
+      "best_ask",
+      "best_bid",
+      "hash",
+      "price",
+      "side",
+      "size"
+    ]
+  },
+  "missing_snapshot_seed_fields": {},
+  "missing_delta_best_fields": {},
+  "switch_checks": [
+    {
+      "phase": "A-to-B",
+      "snapshot_assets": 86,
+      "expected_assets": 86,
+      "snapshot_set_matches": true,
+      "delta_items": 56,
+      "old_asset_delta_items": 4,
+      "old_asset_delta_items_on_control_connection": 66
+    },
+    {
+      "phase": "B-to-A",
+      "snapshot_assets": 86,
+      "expected_assets": 86,
+      "snapshot_set_matches": true,
+      "delta_items": 14,
+      "old_asset_delta_items": 0,
+      "old_asset_delta_items_on_control_connection": 0
+    }
+  ],
+  "reconnect_snapshot_assets": 86,
+  "reconnect_snapshot_set_matches": true,
+  "no_heartbeat_observation": {
+    "seconds": 111.347,
+    "readyState_at_end": 1
+  },
+  "examples": {
+    "book": {
+      "market": "0xb6c8d536a09595ff07092b4a882d26ff08a093b62511cfff3bf43036558e9035",
+      "asset_id": "51479845418647137811296151395322092187540514953657196753373007929310458925176",
+      "timestamp": "1791307657361",
+      "hash": "075709daeb0fc80c371af63a04b8844212214d1d",
+      "bids": [
+        {
+          "price": "0.01",
+          "size": "598"
+        },
+        {
+          "price": "0.22",
+          "size": "687.4"
+        },
+        {
+          "price": "0.23",
+          "size": "605.43"
+        },
+        {
+          "price": "0.25",
+          "size": "189.74"
+        },
+        {
+          "price": "0.26",
+          "size": "515.53"
+        },
+        {
+          "price": "0.27",
+          "size": "198.4"
+        },
+        {
+          "price": "0.28",
+          "size": "405.46"
+        },
+        {
+          "price": "0.29",
+          "size": "2171"
+        },
+        {
+          "price": "0.36",
+          "size": "1000"
+        },
+        {
+          "price": "0.37",
+          "size": "750"
+        },
+        {
+          "price": "0.43",
+          "size": "800"
+        },
+        {
+          "price": "0.44",
+          "size": "2018.18"
+        },
+        {
+          "price": "0.45",
+          "size": "3092.22"
+        },
+        {
+          "price": "0.46",
+          "size": "18464.97"
+        },
+        {
+          "price": "0.47",
+          "size": "9282"
+        },
+        {
+          "price": "0.48",
+          "size": "26552.39"
+        },
+        {
+          "price": "0.49",
+          "size": "50651.52"
+        },
+        {
+          "price": "0.5",
+          "size": "20178.09"
+        }
+      ],
+      "asks": [
+        {
+          "price": "0.99",
+          "size": "158"
+        },
+        {
+          "price": "0.78",
+          "size": "812.63"
+        },
+        {
+          "price": "0.77",
+          "size": "485.64"
+        },
+        {
+          "price": "0.76",
+          "size": "1045"
+        },
+        {
+          "price": "0.73",
+          "size": "846.41"
+        },
+        {
+          "price": "0.72",
+          "size": "478.7"
+        },
+        {
+          "price": "0.67",
+          "size": "30.3"
+        },
+        {
+          "price": "0.63",
+          "size": "1000"
+        },
+        {
+          "price": "0.62",
+          "size": "765.78"
+        },
+        {
+          "price": "0.58",
+          "size": "2673"
+        },
+        {
+          "price": "0.57",
+          "size": "600"
+        },
+        {
+          "price": "0.56",
+          "size": "1739.09"
+        },
+        {
+          "price": "0.55",
+          "size": "2629.44"
+        },
+        {
+          "price": "0.54",
+          "size": "20614.97"
+        },
+        {
+          "price": "0.53",
+          "size": "10832"
+        },
+        {
+          "price": "0.52",
+          "size": "51381.73"
+        },
+        {
+          "price": "0.51",
+          "size": "42994.9"
+        }
+      ],
+      "tick_size": "0.01",
+      "event_type": "book",
+      "last_trade_price": "0.490"
+    },
+    "price_change": {
+      "market": "0xd43898f7e10c30da1adf9c23c808fc8861ec7c0a53195e4a187c199a9b19f376",
+      "price_changes": [
+        {
+          "asset_id": "66616602105135321479456151494379932980062039030841962258728108349184895983957",
+          "price": "0.8",
+          "size": "1119.41",
+          "side": "BUY",
+          "hash": "9477a175e7cf47f4e76ccdd49765b35d84320ede",
+          "best_bid": "0.8",
+          "best_ask": "0.81"
+        },
+        {
+          "asset_id": "41073895388163492044683513841262626450248745686629069268834561009386173172680",
+          "price": "0.2",
+          "size": "1119.41",
+          "side": "SELL",
+          "hash": "94b8ce6687bfff996d65fb8d92f2a42c15367404",
+          "best_bid": "0.19",
+          "best_ask": "0.2"
+        }
+      ],
+      "timestamp": "1791307684019",
+      "event_type": "price_change"
+    }
+  },
+  "limits": [
+    "No last_trade_price or tick_size_change events observed.",
+    "Reconnect was an intentional clean close followed by a new connection, not a network outage.",
+    "The no-heartbeat connection received market updates throughout its observation window.",
+    "Gamma response bodies were not retained by this probe, only page statuses and selected market identifiers."
+  ]
+}

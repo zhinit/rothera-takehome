@@ -1,0 +1,180 @@
+{
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "source": "raw/poking_around_api/2026-10-06-clob-websocket/probe-result.json",
+  "source_sha256": "d9959f601a8fa7dcb4899817260b4c7163714785fc734f209da974f45335439d",
+  "counts": {
+    "book": 430,
+    "price_change": 491,
+    "delta_items": 982,
+    "last_trade_price": 0,
+    "tick_size_change": 0,
+    "empty_bids": 0,
+    "empty_asks": 0,
+    "best_bid_missing_or_boundary": 0,
+    "best_ask_missing_or_boundary": 0
+  },
+  "snapshot_last_trade_states": {
+    "numeric": 168,
+    "empty": 262
+  },
+  "snapshot_tick_sizes": {
+    "0.01": 414,
+    "0.001": 16
+  },
+  "examples": {
+    "empty": {
+      "frame_index": 0,
+      "connection": "switch",
+      "message": {
+        "market": "0x35bf5cce6e79db6f953534ea746c92031043fbdf1cb1ffc97ebad2b06bd291cd",
+        "asset_id": "79908159474797588804016311041209085845807796881613817712500968221739030546610",
+        "timestamp": "1791307656448",
+        "hash": "b698712792ea7db1595b5473f454fa268cb8e528",
+        "bids": [
+          {
+            "price": "0.01",
+            "size": "5"
+          },
+          {
+            "price": "0.09",
+            "size": "2894"
+          },
+          {
+            "price": "0.1",
+            "size": "1857"
+          },
+          {
+            "price": "0.13",
+            "size": "343.4"
+          },
+          {
+            "price": "0.14",
+            "size": "675.77"
+          },
+          {
+            "price": "0.16",
+            "size": "945.17"
+          },
+          {
+            "price": "0.18",
+            "size": "297.61"
+          },
+          {
+            "price": "0.19",
+            "size": "597.53"
+          },
+          {
+            "price": "0.2",
+            "size": "907.36"
+          },
+          {
+            "price": "0.25",
+            "size": "1000"
+          },
+          {
+            "price": "0.26",
+            "size": "3151"
+          },
+          {
+            "price": "0.29",
+            "size": "700"
+          },
+          {
+            "price": "0.3",
+            "size": "1150"
+          },
+          {
+            "price": "0.31",
+            "size": "1140"
+          },
+          {
+            "price": "0.32",
+            "size": "3870"
+          },
+          {
+            "price": "0.33",
+            "size": "5"
+          }
+        ],
+        "asks": [
+          {
+            "price": "0.77",
+            "size": "194.09"
+          },
+          {
+            "price": "0.76",
+            "size": "394.2"
+          },
+          {
+            "price": "0.73",
+            "size": "560.09"
+          },
+          {
+            "price": "0.68",
+            "size": "670.41"
+          },
+          {
+            "price": "0.67",
+            "size": "406.17"
+          },
+          {
+            "price": "0.66",
+            "size": "1135"
+          },
+          {
+            "price": "0.5",
+            "size": "1000"
+          },
+          {
+            "price": "0.49",
+            "size": "3103"
+          },
+          {
+            "price": "0.45",
+            "size": "700"
+          },
+          {
+            "price": "0.44",
+            "size": "982"
+          },
+          {
+            "price": "0.43",
+            "size": "940"
+          },
+          {
+            "price": "0.42",
+            "size": "960"
+          },
+          {
+            "price": "0.41",
+            "size": "26.66"
+          },
+          {
+            "price": "0.39",
+            "size": "250"
+          },
+          {
+            "price": "0.38",
+            "size": "714.5"
+          },
+          {
+            "price": "0.37",
+            "size": "5"
+          }
+        ],
+        "tick_size": "0.01",
+        "event_type": "book",
+        "last_trade_price": ""
+      }
+    }
+  },
+  "limitations": [
+    "Counts include repeated snapshots and parallel connections, not unique markets.",
+    "This is an offline reanalysis of the October 6 NFL capture, not a new live probe.",
+    "No empty-side or boundary delta quote was observed, so no empty-side sentinel is established.",
+    "An empty snapshot trade string establishes an unavailable seed, not independently verified absence of historical trades."
+  ]
+}

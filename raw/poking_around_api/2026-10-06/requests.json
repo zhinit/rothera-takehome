@@ -1,0 +1,74 @@
+[
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=0",
+    "originHeader": "http://localhost:5173",
+    "responseFile": "gamma-events-offset-0.json",
+    "responseBytes": 9441507,
+    "sha256": "ec70ed273734aeb422626e79eb8c79be9b69eacdb114901f26e19e584966d919"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=100",
+    "originHeader": null,
+    "responseFile": "gamma-events-offset-100.json",
+    "responseBytes": 2147333,
+    "sha256": "b827682e7e74d02f1395e81a37bb5f58aa35b04eb6be40827d73f8be9a8669ac"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=200",
+    "originHeader": null,
+    "responseFile": "gamma-events-offset-200.json",
+    "responseBytes": 2055769,
+    "sha256": "897f4feb80f9606ea00ba455ed60d9eaac8eb7ddead7a1ca22948a6c754caf8e"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=300",
+    "originHeader": null,
+    "responseFile": "gamma-events-offset-300.json",
+    "responseBytes": 7006662,
+    "sha256": "6bf4fcccc340c57f74e0292c336528ce52a3bed338e71faadfb34f2034873c7c"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=400",
+    "originHeader": null,
+    "responseFile": "gamma-events-offset-400.json",
+    "responseBytes": 39274824,
+    "sha256": "44372639c83e8cf6db39b49bcaff8afc2259bc685c2dac262066ec88077cd17b"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=500",
+    "originHeader": null,
+    "responseFile": "gamma-events-offset-500.json",
+    "responseBytes": 10140504,
+    "sha256": "5571cb5ecbeb806db1bdbb01271c76a99e1e8c3cde52357941e18d256869e584"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=600",
+    "originHeader": null,
+    "responseFile": "gamma-events-offset-600.json",
+    "responseBytes": 3,
+    "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/sports",
+    "originHeader": "http://localhost:5173",
+    "responseFile": "gamma-sports.json",
+    "responseBytes": 150325,
+    "sha256": "2c323de499e326406891cfb80c9883d98499591c9588b74df82c48d24dfdd6ab"
+  },
+  {
+    "method": "GET",
+    "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=500&offset=0",
+    "originHeader": null,
+    "responseFile": "gamma-events-limit-500.json",
+    "responseBytes": 9440763,
+    "sha256": "282b412b00206467d5598b9fc299d3890a289e51ea72f7144ab4b6af045dafa1"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "retrieved_at": "2026-10-06T17:34:12.058573+00:00",
+  "sdk_commit": "d36b9df37b8562887aadad78b063bb84550eb343",
+  "sources": [
+    {
+      "name": "polymarket-realtime-data-2026",
+      "url": "https://docs.polymarket.com/market-data/realtime-data",
+      "format": "Full HTML and publisher-provided Markdown, byte-for-byte.",
+      "html_sha256": "a4ce6060a99bd1bab6a78ba32af97f11c58fdc49274a83d3ccf5404a9b9ed01f",
+      "markdown_sha256": "adcc641bde699fc6e2196e80a84e21b680aa0d36b30183b29b753c910dd5671e"
+    },
+    {
+      "name": "polymarket-clob-asyncapi-2026",
+      "url": "https://docs.polymarket.com/asyncapi.json",
+      "format": "Full original JSON in Markdown and generated HTML wrappers.",
+      "html_sha256": "e744939e29b46c3ab72da5a8548e5bd8d6888e9e0b6d1547cad54cabc6c05106",
+      "markdown_sha256": "31191fe59ce63aeb2bb1012b679097fced62ab5b3bd60d2f82d2e8220dc4278d"
+    },
+    {
+      "name": "polymarket-sdk-websocket-clob-market-2026",
+      "url": "https://github.com/Polymarket/ts-sdk/blob/d36b9df37b8562887aadad78b063bb84550eb343/packages/client/src/websockets/clob/market.ts",
+      "format": "Full GitHub HTML and original TypeScript source in a Markdown code fence, pinned to a commit.",
+      "html_sha256": "809048853a32bea308ce28407c9142defd19a080bb392af701e35416604a8ce5",
+      "markdown_sha256": "d9c0b818af9aa72700e890f0b0860483f239a6332f1e31fd8f7b4b11dec4e833"
+    },
+    {
+      "name": "polymarket-sdk-websocket-clob-protocol-2026",
+      "url": "https://github.com/Polymarket/ts-sdk/blob/d36b9df37b8562887aadad78b063bb84550eb343/packages/client/src/websockets/clob/protocol.ts",
+      "format": "Full GitHub HTML and original TypeScript source in a Markdown code fence, pinned to a commit.",
+      "html_sha256": "f26141026dee927308f1b18ab43491a6cf6fe2b0b442dd43beeb19249400a40c",
+      "markdown_sha256": "f7afd7e69af011be76b9003117e885524d8773e56b3c5cf4ec271833d7fe0b7a"
+    },
+    {
+      "name": "polymarket-sdk-websocket-heartbeat-2026",
+      "url": "https://github.com/Polymarket/ts-sdk/blob/d36b9df37b8562887aadad78b063bb84550eb343/packages/client/src/websockets/heartbeat.ts",
+      "format": "Full GitHub HTML and original TypeScript source in a Markdown code fence, pinned to a commit.",
+      "html_sha256": "8737b7b759455052b2c56cf2ccce067039d81c58aa9d20267e58d2e49f17815a",
+      "markdown_sha256": "9e0fc5314ddd960313061f9fcff208a9eccb7e3be54ce78e1a9f4e69a346b1fa"
+    },
+    {
+      "name": "polymarket-sdk-websocket-lifecycle-2026",
+      "url": "https://github.com/Polymarket/ts-sdk/blob/d36b9df37b8562887aadad78b063bb84550eb343/packages/client/src/websockets/lifecycle.ts",
+      "format": "Full GitHub HTML and original TypeScript source in a Markdown code fence, pinned to a commit.",
+      "html_sha256": "6972fdeb4a17f2d888bd204a1ff0b3b8261aca31013b4803f6fdf3b51e5fe000",
+      "markdown_sha256": "57d105179517c1268537e2d8109b772849c204ebbfb84a0ef87ca713881c0fb2"
+    },
+    {
+      "name": "zhinit-kalshi-polymarket-arbitrage-2026",
+      "url": "https://www.zhinit.dev/blog/kalshi-polymarket-arbitrage",
+      "bundle_url": "https://www.zhinit.dev/assets/index-8W8W0-Np.js",
+      "format": "Full original HTML shell, full original JavaScript bundle, and complete embedded article extracted with JavaScript string escapes decoded without evaluating code.",
+      "html_sha256": "a3cb2e82c29d497445584992c24f0eb6c47d572652ca61396a0c7f53a75edadf",
+      "bundle_sha256": "2598990f7a3901eaec47d9b9fbf918ddfda38b881a5ed2c3dda39c2036c2c48c",
+      "markdown_sha256": "cb07a311fc09dbc01177dfde701c4661f11b624cb66c8302c29c5cd4104e9cd7"
+    }
+  ]
+}

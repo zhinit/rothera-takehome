@@ -1,0 +1,144 @@
+{
+  "checkedAt": "2026-10-06T17:18:33.882Z",
+  "browser": "Google Chrome headless",
+  "response": {
+    "id": 3,
+    "result": {
+      "result": {
+        "type": "object",
+        "value": {
+          "origin": "http://127.0.0.1:63904",
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=nfl&active=true&closed=false&limit=100&offset=300",
+          "gamma": {
+            "status": 200,
+            "count": 100
+          },
+          "market": {
+            "eventSlug": "nfl-tb-dal-2026-10-09",
+            "question": "Buccaneers vs. Cowboys",
+            "outcomes": [
+              "Buccaneers",
+              "Cowboys"
+            ],
+            "assets_ids": [
+              "41073895388163492044683513841262626450248745686629069268834561009386173172680",
+              "66616602105135321479456151494379932980062039030841962258728108349184895983957"
+            ]
+          },
+          "websocket": "received",
+          "frame": "[{\"market\":\"0xd43898f7e10c30da1adf9c23c808fc8861ec7c0a53195e4a187c199a9b19f376\",\"asset_id\":\"41073895388163492044683513841262626450248745686629069268834561009386173172680\",\"timestamp\":\"1791307099709\",\"hash\":\"79b6093f21e2923ae488a9f5703f165556f38e6e\",\"bids\":[{\"price\":\"0.01\",\"size\":\"2010\"},{\"price\":\"0.02\",\"size\":\"1000\"},{\"price\":\"0.03\",\"size\":\"2672.6\"},{\"price\":\"0.04\",\"size\":\"500\"},{\"price\":\"0.05\",\"size\":\"400\"},{\"price\":\"0.06\",\"size\":\"333.3\"},{\"price\":\"0.07\",\"size\":\"285.7\"},{\"price\":\"0.09\",\"size\":\"8756.08\"},{\"price\":\"0.11\",\"size\":\"6528.61\"},{\"price\":\"0.12\",\"size\":\"125\"},{\"price\":\"0.13\",\"size\":\"131.92\"},{\"price\":\"0.14\",\"size\":\"61\"},{\"price\":\"0.15\",\"size\":\"12163\"},{\"price\":\"0.16\",\"size\":\"1265.1\"},{\"price\":\"0.17\",\"size\":\"60373.71\"},{\"price\":\"0.18\",\"size\":\"208972.92\"},{\"price\":\"0.19\",\"size\":\"223534.42\"}],\"asks\":[{\"price\":\"0.99\",\"size\":\"111\"},{\"price\":\"0.88\",\"size\":\"160.85\"},{\"price\":\"0.82\",\"size\":\"29.99\"},{\"price\":\"0.64\",\"size\":\"1613.76\"},{\"price\":\"0.57\",\"size\":\"15\"},{\"price\":\"0.56\",\"size\":\"243.5\"},{\"price\":\"0.55\",\"size\":\"1311.12\"},{\"price\":\"0.54\",\"size\":\"2557\"},{\"price\":\"0.35\",\"size\":\"5\"},{\"price\":\"0.32\",\"size\":\"10.29\"},{\"price\":\"0.3\",\"size\":\"671\"},{\"price\":\"0.27\",\"size\":\"800\"},{\"price\":\"0.26\",\"size\":\"805\"},{\"price\":\"0.25\",\"size\":\"36987.95\"},{\"price\":\"0.24\",\"size\":\"1563.94\"},{\"price\":\"0.23\",\"size\":\"20472\"},{\"price\":\"0.22\",\"size\":\"164748.74\"},{\"price\":\"0.21\",\"size\":\"139382.03\"},{\"price\":\"0.2\",\"size\":\"1449.76\"}],\"tick_size\":\"0.01\",\"event_type\":\"book\",\"last_trade_price\":\"0.190\"},{\"market\":\"0xd43898f7e10c30da1adf9c23c808fc8861ec7c0a53195e4a187c199a9b19f376\",\"asset_id\":\"66616602105135321479456151494379932980062039030841962258728108349184895983957\",\"timestamp\":\"1791307099709\",\"hash\":\"648fa335e98636e4956ca4f339c79f34f0f0b2de\",\"bids\":[{\"price\":\"0.01\",\"size\":\"111\"},{\"price\":\"0.12\",\"size\":\"160.85\"},{\"price\":\"0.18\",\"size\":\"29.99\"},{\"price\":\"0.36\",\"size\":\"1613.76\"},{\"price\":\"0.43\",\"size\":\"15\"},{\"price\":\"0.44\",\"size\":\"243.5\"},{\"price\":\"0.45\",\"size\":\"1311.12\"},{\"price\":\"0.46\",\"size\":\"2557\"},{\"price\":\"0.65\",\"size\":\"5\"},{\"price\":\"0.68\",\"size\":\"10.29\"},{\"price\":\"0.7\",\"size\":\"671\"},{\"price\":\"0.73\",\"size\":\"800\"},{\"price\":\"0.74\",\"size\":\"805\"},{\"price\":\"0.75\",\"size\":\"36987.95\"},{\"price\":\"0.76\",\"size\":\"1563.94\"},{\"price\":\"0.77\",\"size\":\"20472\"},{\"price\":\"0.78\",\"size\":\"164748.74\"},{\"price\":\"0.79\",\"size\":\"139382.03\"},{\"price\":\"0.8\",\"size\":\"1449.76\"}],\"asks\":[{\"price\":\"0.99\",\"size\":\"2010\"},{\"price\":\"0.98\",\"size\":\"1000\"},{\"price\":\"0.97\",\"size\":\"2672.6\"},{\"price\":\"0.96\",\"size\":\"500\"},{\"price\":\"0.95\",\"size\":\"400\"},{\"price\":\"0.94\",\"size\":\"333.3\"},{\"price\":\"0.93\",\"size\":\"285.7\"},{\"price\":\"0.91\",\"size\":\"8756.08\"},{\"price\":\"0.89\",\"size\":\"6528.61\"},{\"price\":\"0.88\",\"size\":\"125\"},{\"price\":\"0.87\",\"size\":\"131.92\"},{\"price\":\"0.86\",\"size\":\"61\"},{\"price\":\"0.85\",\"size\":\"12163\"},{\"price\":\"0.84\",\"size\":\"1265.1\"},{\"price\":\"0.83\",\"size\":\"60373.71\"},{\"price\":\"0.82\",\"size\":\"208972.92\"},{\"price\":\"0.81\",\"size\":\"223534.42\"}],\"tick_size\":\"0.01\",\"event_type\":\"book\",\"last_trade_price\":\"0.190\"}]\n"
+        }
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "method": "Network.webSocketCreated",
+      "params": {
+        "requestId": "9137.7",
+        "url": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "initiator": {
+          "type": "script",
+          "stack": {
+            "callFrames": [
+              {
+                "functionName": "",
+                "scriptId": "3",
+                "url": "http://127.0.0.1:63904/",
+                "lineNumber": 0,
+                "columnNumber": 731
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "method": "Network.webSocketWillSendHandshakeRequest",
+      "params": {
+        "requestId": "9137.7",
+        "timestamp": 13556.202498,
+        "wallTime": 1791307113.544508,
+        "request": {
+          "headers": {
+            "Upgrade": "websocket",
+            "Origin": "http://127.0.0.1:63904",
+            "Cache-Control": "no-cache",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Pragma": "no-cache",
+            "Connection": "Upgrade",
+            "Sec-WebSocket-Key": "0m3PDsaGDjm8UZazDjb3uQ==",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+            "Sec-WebSocket-Version": "13",
+            "Host": "ws-subscriptions-clob.polymarket.com",
+            "Sec-WebSocket-Extensions": "permessage-deflate; client_max_window_bits"
+          }
+        }
+      }
+    },
+    {
+      "method": "Network.webSocketHandshakeResponseReceived",
+      "params": {
+        "requestId": "9137.7",
+        "timestamp": 13556.45391,
+        "response": {
+          "status": 101,
+          "statusText": "Switching Protocols",
+          "headers": {
+            "Upgrade": "websocket",
+            "Strict-Transport-Security": "max-age=7776000; includeSubDomains",
+            "cf-cache-status": "DYNAMIC",
+            "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+            "Connection": "upgrade",
+            "CF-RAY": "a46653743e52ae70-EWR",
+            "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"\ncfEdge;dur=10,cfOrigin;dur=226",
+            "Date": "Tue, 06 Oct 2026 17:18:33 GMT",
+            "Sec-WebSocket-Accept": "PUhuT1x4QY9caOYKuDw7yXRwCCY=",
+            "Server": "cloudflare"
+          },
+          "headersText": "HTTP/1.1 101 Switching Protocols\r\nDate: Tue, 06 Oct 2026 17:18:33 GMT\r\nConnection: upgrade\r\nUpgrade: websocket\r\nSec-WebSocket-Accept: PUhuT1x4QY9caOYKuDw7yXRwCCY=\r\nStrict-Transport-Security: max-age=7776000; includeSubDomains\r\ncf-cache-status: DYNAMIC\r\nSpeculation-Rules: \"/cdn-cgi/speculation\"\r\nServer-Timing: cfCacheStatus;desc=\"DYNAMIC\"\r\nServer-Timing: cfEdge;dur=10,cfOrigin;dur=226\r\nServer: cloudflare\r\nCF-RAY: a46653743e52ae70-EWR\r\n\r\n",
+          "requestHeaders": {
+            "Upgrade": "websocket",
+            "Origin": "http://127.0.0.1:63904",
+            "Cache-Control": "no-cache",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Pragma": "no-cache",
+            "Connection": "Upgrade",
+            "Sec-WebSocket-Key": "0m3PDsaGDjm8UZazDjb3uQ==",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+            "Sec-WebSocket-Version": "13",
+            "Host": "ws-subscriptions-clob.polymarket.com",
+            "Sec-WebSocket-Extensions": "permessage-deflate; client_max_window_bits"
+          },
+          "requestHeadersText": "GET wss://ws-subscriptions-clob.polymarket.com/ws/market HTTP/1.1\r\nHost: ws-subscriptions-clob.polymarket.com\r\nConnection: Upgrade\r\nPragma: no-cache\r\nCache-Control: no-cache\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36\r\nUpgrade: websocket\r\nOrigin: http://127.0.0.1:63904\r\nSec-WebSocket-Version: 13\r\nAccept-Encoding: gzip, deflate, br, zstd\r\nAccept-Language: en-US,en;q=0.9\r\nSec-WebSocket-Key: 0m3PDsaGDjm8UZazDjb3uQ==\r\nSec-WebSocket-Extensions: permessage-deflate; client_max_window_bits\r\n\r\n"
+        }
+      }
+    },
+    {
+      "method": "Network.webSocketFrameSent",
+      "params": {
+        "requestId": "9137.7",
+        "timestamp": 13556.454069,
+        "response": {
+          "opcode": 1,
+          "mask": true,
+          "payloadData": "{\"assets_ids\":[\"41073895388163492044683513841262626450248745686629069268834561009386173172680\",\"66616602105135321479456151494379932980062039030841962258728108349184895983957\"],\"type\":\"market\",\"initial_dump\":true}"
+        }
+      }
+    },
+    {
+      "method": "Network.webSocketFrameReceived",
+      "params": {
+        "requestId": "9137.7",
+        "timestamp": 13556.539269,
+        "response": {
+          "opcode": 1,
+          "mask": false,
+          "payloadData": "[{\"market\":\"0xd43898f7e10c30da1adf9c23c808fc8861ec7c0a53195e4a187c199a9b19f376\",\"asset_id\":\"41073895388163492044683513841262626450248745686629069268834561009386173172680\",\"timestamp\":\"1791307099709\",\"hash\":\"79b6093f21e2923ae488a9f5703f165556f38e6e\",\"bids\":[{\"price\":\"0.01\",\"size\":\"2010\"},{\"price\":\"0.02\",\"size\":\"1000\"},{\"price\":\"0.03\",\"size\":\"2672.6\"},{\"price\":\"0.04\",\"size\":\"500\"},{\"price\":\"0.05\",\"size\":\"400\"},{\"price\":\"0.06\",\"size\":\"333.3\"},{\"price\":\"0.07\",\"size\":\"285.7\"},{\"price\":\"0.09\",\"size\":\"8756.08\"},{\"price\":\"0.11\",\"size\":\"6528.61\"},{\"price\":\"0.12\",\"size\":\"125\"},{\"price\":\"0.13\",\"size\":\"131.92\"},{\"price\":\"0.14\",\"size\":\"61\"},{\"price\":\"0.15\",\"size\":\"12163\"},{\"price\":\"0.16\",\"size\":\"1265.1\"},{\"price\":\"0.17\",\"size\":\"60373.71\"},{\"price\":\"0.18\",\"size\":\"208972.92\"},{\"price\":\"0.19\",\"size\":\"223534.42\"}],\"asks\":[{\"price\":\"0.99\",\"size\":\"111\"},{\"price\":\"0.88\",\"size\":\"160.85\"},{\"price\":\"0.82\",\"size\":\"29.99\"},{\"price\":\"0.64\",\"size\":\"1613.76\"},{\"price\":\"0.57\",\"size\":\"15\"},{\"price\":\"0.56\",\"size\":\"243.5\"},{\"price\":\"0.55\",\"size\":\"1311.12\"},{\"price\":\"0.54\",\"size\":\"2557\"},{\"price\":\"0.35\",\"size\":\"5\"},{\"price\":\"0.32\",\"size\":\"10.29\"},{\"price\":\"0.3\",\"size\":\"671\"},{\"price\":\"0.27\",\"size\":\"800\"},{\"price\":\"0.26\",\"size\":\"805\"},{\"price\":\"0.25\",\"size\":\"36987.95\"},{\"price\":\"0.24\",\"size\":\"1563.94\"},{\"price\":\"0.23\",\"size\":\"20472\"},{\"price\":\"0.22\",\"size\":\"164748.74\"},{\"price\":\"0.21\",\"size\":\"139382.03\"},{\"price\":\"0.2\",\"size\":\"1449.76\"}],\"tick_size\":\"0.01\",\"event_type\":\"book\",\"last_trade_price\":\"0.190\"},{\"market\":\"0xd43898f7e10c30da1adf9c23c808fc8861ec7c0a53195e4a187c199a9b19f376\",\"asset_id\":\"66616602105135321479456151494379932980062039030841962258728108349184895983957\",\"timestamp\":\"1791307099709\",\"hash\":\"648fa335e98636e4956ca4f339c79f34f0f0b2de\",\"bids\":[{\"price\":\"0.01\",\"size\":\"111\"},{\"price\":\"0.12\",\"size\":\"160.85\"},{\"price\":\"0.18\",\"size\":\"29.99\"},{\"price\":\"0.36\",\"size\":\"1613.76\"},{\"price\":\"0.43\",\"size\":\"15\"},{\"price\":\"0.44\",\"size\":\"243.5\"},{\"price\":\"0.45\",\"size\":\"1311.12\"},{\"price\":\"0.46\",\"size\":\"2557\"},{\"price\":\"0.65\",\"size\":\"5\"},{\"price\":\"0.68\",\"size\":\"10.29\"},{\"price\":\"0.7\",\"size\":\"671\"},{\"price\":\"0.73\",\"size\":\"800\"},{\"price\":\"0.74\",\"size\":\"805\"},{\"price\":\"0.75\",\"size\":\"36987.95\"},{\"price\":\"0.76\",\"size\":\"1563.94\"},{\"price\":\"0.77\",\"size\":\"20472\"},{\"price\":\"0.78\",\"size\":\"164748.74\"},{\"price\":\"0.79\",\"size\":\"139382.03\"},{\"price\":\"0.8\",\"size\":\"1449.76\"}],\"asks\":[{\"price\":\"0.99\",\"size\":\"2010\"},{\"price\":\"0.98\",\"size\":\"1000\"},{\"price\":\"0.97\",\"size\":\"2672.6\"},{\"price\":\"0.96\",\"size\":\"500\"},{\"price\":\"0.95\",\"size\":\"400\"},{\"price\":\"0.94\",\"size\":\"333.3\"},{\"price\":\"0.93\",\"size\":\"285.7\"},{\"price\":\"0.91\",\"size\":\"8756.08\"},{\"price\":\"0.89\",\"size\":\"6528.61\"},{\"price\":\"0.88\",\"size\":\"125\"},{\"price\":\"0.87\",\"size\":\"131.92\"},{\"price\":\"0.86\",\"size\":\"61\"},{\"price\":\"0.85\",\"size\":\"12163\"},{\"price\":\"0.84\",\"size\":\"1265.1\"},{\"price\":\"0.83\",\"size\":\"60373.71\"},{\"price\":\"0.82\",\"size\":\"208972.92\"},{\"price\":\"0.81\",\"size\":\"223534.42\"}],\"tick_size\":\"0.01\",\"event_type\":\"book\",\"last_trade_price\":\"0.190\"}]\n"
+        }
+      }
+    }
+  ]
+}

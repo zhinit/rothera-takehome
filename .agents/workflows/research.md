@@ -42,6 +42,12 @@ interpretation.
 Files in `raw/html/` and `raw/md/` are **immutable** once saved — never modify
 them. If a source can't be fetched (paywall, 429, etc.), note it and move on.
 
+For API probes or experiments, save scripts, exact requests/commands, raw
+responses/output, and failures as you work in `raw/<topic>/<date-or-run>/`
+(e.g. `raw/poking_around_api/2026-10-06/`). Include a short README with the
+environment, what was checked, and limitations. Preserve completed runs unchanged.
+Wiki claims from probes must cite these saved artifacts.
+
 ## 3. Ingest into the wiki
 
 1. Read the full source document(s).
@@ -59,8 +65,9 @@ Follow this **page format**:
 
 - H1 title on line 1; content organized into `##` sections of prose.
 - Every factual claim or section carries an inline citation
-  `(source: <file>.md)` naming a file that exists in `raw/md/`. Citations
-  point to raw sources only, never to other wiki pages.
+  `(source: <file>.md)` naming a file in `raw/md/`, or
+  `(source: <topic>/<date-or-run>/<file>)` naming a probe artifact relative to
+  `raw/`. Citations point to raw sources only, never to other wiki pages.
 - Wiki links are `[[page-name]]`, or `[[page-name|display text]]` for custom
   display text. The target page must exist.
 - A closing **Related pages** section is optional.

@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-06",
+  "sources": [
+    {
+      "name": "polymarket-prices-order-books-2026",
+      "url": "https://docs.polymarket.com/market-data/prices-order-books",
+      "format": "Full fetched HTML and publisher-provided Markdown, byte-for-byte.",
+      "html_sha256": "7cdabaf3742f93ed34f2bc97221cbc44ace88fb492388c69e6035ea9ac67d2f9",
+      "markdown_sha256": "438b620f7ac6c856c03444ac4f0d5893938c30510f533a25e0068907cec704cd"
+    },
+    {
+      "name": "polymarket-prices-orderbook-concepts-2026",
+      "url": "https://docs.polymarket.com/concepts/prices-orderbook",
+      "format": "Full fetched HTML and publisher-provided Markdown, byte-for-byte.",
+      "html_sha256": "854f4bb48969b4ba0b3f97ce315f4bc0bf66b72ae00264e9b8f0987f1039a873",
+      "markdown_sha256": "f3f23f21862272a505f098b3703c8954a52719f0dc45eb9c71bc7231b5ce0380"
+    },
+    {
+      "name": "polymarket-clob-openapi-2026",
+      "url": "https://docs.polymarket.com/api-spec/clob-openapi.yaml",
+      "format": "Full original YAML in lossless Markdown fence and generated HTML wrapper.",
+      "html_sha256": "51d62e0674b5f3a87335a3ecfd4bb7c5ff8bb87a90aeb61e69aa138fa793aa13",
+      "markdown_sha256": "91b1171966d883122cece35303ff2ed2d9690354e19fc22af43454d2bfb5b6c0"
+    },
+    {
+      "name": "polymarket-sdk-rounding-config-2026",
+      "url": "https://github.com/Polymarket/clob-client-v2/blob/8046a89ee9ba75676e31a11830785c046ccee167/src/order-builder/helpers/roundingConfig.ts",
+      "format": "Full GitHub HTML and full original TypeScript in Markdown fence, pinned to commit.",
+      "html_sha256": "375e369ebbd88b9987e8a9cf5dd9198f498795a171d86a53f91de703ef661051",
+      "markdown_sha256": "4aba101b5f3501b74dfbb1815414d2a25709584e023b52ba2e8b2a311e27a312"
+    },
+    {
+      "name": "ecmascript-data-types-2026",
+      "url": "https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html",
+      "format": "Full fetched HTML and full Pandoc GFM conversion.",
+      "html_sha256": "1ca116e86a93670526176c8298114eeaae4dc8750708acdd9e41592ad3b9fbf4",
+      "markdown_sha256": "4920fc124eadc8932f96dc69a191760d0beee08470a6e0264afc3f39e1212f92"
+    },
+    {
+      "name": "ecmascript-numbers-dates-2026",
+      "url": "https://tc39.es/ecma262/multipage/numbers-and-dates.html",
+      "format": "Full fetched HTML and full Pandoc GFM conversion.",
+      "html_sha256": "0d15b39183658eb77c2579058706dbebe1a434870eee42c7bbc526261aefb4f2",
+      "markdown_sha256": "fbd34126f508323bc9d80dd00d4f4a9f54a02014fc5839ba14a194f539016db6"
+    },
+    {
+      "name": "whatwg-html-timers-2026",
+      "url": "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html",
+      "format": "Full fetched HTML and full Pandoc GFM conversion.",
+      "html_sha256": "ee9f90c0e96fd2d0ef48e6abd4e6777b1f564e0cd10ff7f04afd7e4ce22649d8",
+      "markdown_sha256": "6cfe94a645a943d3205a90824cac751f89be5f02d309696a3588b0194786bedf"
+    },
+    {
+      "name": "w3c-css-animations-2026",
+      "url": "https://drafts.csswg.org/css-animations-1/",
+      "format": "Full fetched HTML. Initial Pandoc Markdown conversion includes main content but omits front matter. Preserved unchanged. Use w3c-css-animations-full-2026 for the full conversion.",
+      "html_sha256": "5ef490ba46e2674465863c366a03d75787b9d448fa51ca849b9fa7cd3203be0b",
+      "markdown_sha256": "339ae8c974b1f11dd616592e90388e981c497c42eebef115b698f0c320cce40d"
+    },
+    {
+      "name": "w3c-css-animations-full-2026",
+      "url": "https://drafts.csswg.org/css-animations-1/",
+      "format": "Full original HTML and full Pandoc GFM conversion, with main tags treated as div tags during conversion to retain front matter, navigation, indexes, and references.",
+      "html_sha256": "5ef490ba46e2674465863c366a03d75787b9d448fa51ca849b9fa7cd3203be0b",
+      "markdown_sha256": "acf80965e476aa0edc1cb8a6c5e501aa0688c2372afc69fe4b8c043be687b866"
+    }
+  ]
+}
