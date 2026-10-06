@@ -10,6 +10,14 @@ page arrives. It does not stop on a full page with no matching games. It
 deduplicates games by ID, filters the assignment's exact game slug pattern,
 and excludes ended or closed games.
 
+Requests use `order=startTime,id&ascending=true` and publish validated games after
+each page. The first available game can stream prices while remaining pages load.
+The UI preserves selection as the list grows, labels incomplete discovery, and
+keeps partial games usable if a later page fails. Retry starts a fresh walk.
+An empty slate is announced only after the terminal page. Cancelled walks cannot
+publish more progress. Requests remain sequential, with no custom metadata cache.
+See the [discovery latency research](discovery-latency-research.md).
+
 Markets must match the event title exactly for moneyline, or the title plus
 `: O/U {number}` exactly for totals. Totals sort numerically. Closed, explicitly
 inactive, or explicitly order-book-disabled markets are excluded. Both outcome
@@ -27,6 +35,8 @@ These decisions use the existing research on [pagination](../wiki/polymarket-gam
 desired token set, sends unsubscribe followed by subscribe on the open socket,
 and resets quote state. A pending connection reads the latest selected tokens
 when it opens. Unmount closes the socket and clears all timers.
+Repeated token sets leave the current quotes, subscription, and snapshot deadline
+intact, including when discovery returns a new object for the same game.
 
 The stream sends literal `PING` every ten seconds. More than 30 seconds without
 `PONG` closes the connection. Failed attempts use exponential retry delays from

@@ -7,32 +7,38 @@ import { MarketTable } from './components/MarketTable'
 import { ConnectionNotice, ConnectionStatus } from './components/ConnectionStatus'
 import type { Game } from './types'
 
-type Discovery =
-  { status: 'loading' } | { status: 'error'; message: string } | { status: 'ready'; games: Game[] }
+type Discovery = { games: Game[] } & (
+  { status: 'loading' } | { status: 'error'; message: string } | { status: 'ready' }
+)
 
 export default function App() {
-  const [discovery, setDiscovery] = useState<Discovery>({ status: 'loading' })
+  const [discovery, setDiscovery] = useState<Discovery>({ status: 'loading', games: [] })
   const [selectedId, setSelectedId] = useState('')
   const [attempt, setAttempt] = useState(0)
   const stream = useRef<MarketStream | null>(null)
-  const games = discovery.status === 'ready' ? discovery.games : []
+  const games = discovery.games
   const selectedGame = games.find((game) => game.id === selectedId) ?? games[0]
 
   useEffect(() => {
     const controller = new AbortController()
-    void fetchGames(controller.signal)
+    void fetchGames(controller.signal, (loaded) => {
+      if (controller.signal.aborted) return
+      setDiscovery({ status: 'loading', games: loaded })
+      setSelectedId((current) => current || loaded[0]?.id || '')
+    })
       .then((loaded) => {
         if (!controller.signal.aborted) setDiscovery({ status: 'ready', games: loaded })
       })
       .catch((error: unknown) => {
         if (!controller.signal.aborted)
-          setDiscovery({
+          setDiscovery((current) => ({
             status: 'error',
+            games: current.games,
             message:
               error instanceof Error
                 ? error.message
                 : 'Unable to load games. Check your connection and try again.',
-          })
+          }))
       })
     return () => controller.abort()
   }, [attempt])
@@ -55,7 +61,8 @@ export default function App() {
   }, [selectedGame])
 
   function retry() {
-    setDiscovery({ status: 'loading' })
+    setDiscovery({ status: 'loading', games: [] })
+    setSelectedId('')
     setAttempt((value) => value + 1)
   }
 
@@ -78,14 +85,14 @@ export default function App() {
           />
         )}
         <main id="main" className={games.length ? '' : 'full-width'}>
-          {discovery.status === 'loading' && (
+          {discovery.status === 'loading' && games.length === 0 && (
             <div className="state-panel" role="status">
               <div className="loader" />
               <h2>Finding the next matchup</h2>
               <p>Loading the full slate of active NFL games…</p>
             </div>
           )}
-          {discovery.status === 'error' && (
+          {discovery.status === 'error' && games.length === 0 && (
             <div className="state-panel" role="alert">
               <span className="state-symbol">!</span>
               <h2>Games couldn’t load</h2>
@@ -107,6 +114,19 @@ export default function App() {
           )}
           {selectedGame && (
             <>
+              {discovery.status === 'loading' && (
+                <p className="discovery-notice" role="status">
+                  {games.length} games found · Loading remaining games…
+                </p>
+              )}
+              {discovery.status === 'error' && (
+                <div className="connection-notice" role="alert">
+                  <p>The game list is incomplete. {discovery.message}</p>
+                  <button className="primary-button" onClick={retry}>
+                    Try again
+                  </button>
+                </div>
+              )}
               <h1 className="feed-heading">
                 <ConnectionStatus />
               </h1>

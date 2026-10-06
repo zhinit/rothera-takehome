@@ -66,7 +66,109 @@ function selectSecondGame() {
   })
 }
 
+function fullPage(...events: unknown[]) {
+  return new Response(
+    JSON.stringify([
+      ...events,
+      ...Array.from({ length: 100 - events.length }, (_, id) => ({ id, slug: 'future' })),
+    ]),
+  )
+}
+
 describe('dashboard behavior through HTTP and WebSocket boundaries', () => {
+  it('streams before discovery completes and preserves automatic and user selection across pages', async () => {
+    let secondPage: (response: Response) => void = () => undefined
+    let lastPage: (response: Response) => void = () => undefined
+    fetchMock
+      .mockResolvedValueOnce(fullPage(games[0]))
+      .mockImplementationOnce(
+        () =>
+          new Promise((resolve) => {
+            secondPage = resolve
+          }),
+      )
+      .mockImplementationOnce(
+        () =>
+          new Promise((resolve) => {
+            lastPage = resolve
+          }),
+      )
+    await mount()
+    expect(screen.queryByText('Finding the next matchup')).not.toBeInTheDocument()
+    expect(screen.getByText(/Loading remaining games/)).toBeInTheDocument()
+    await connect()
+    await seed()
+    expect(screen.getByText('Live Feed for Selected Matchup')).toBeInTheDocument()
+
+    await act(() => {
+      secondPage(fullPage(games[0], { ...games[1], startTime: '2020-01-01T00:00:00Z' }))
+      return Promise.resolve()
+    })
+    expect(screen.getAllByRole('option')[0]).toHaveTextContent('Bills at Rams')
+    expect(screen.getByRole('heading', { name: 'Chiefs at Dolphins' })).toBeInTheDocument()
+    expect(prices('Chiefs')).toEqual(['0.40', '0.50', '0.45', '0.10'])
+    expect(socket().send).toHaveBeenCalledTimes(1)
+
+    selectSecondGame()
+    await feed(book('201'), book('202'))
+    const sentBeforeCompletion = socket().send.mock.calls.length
+    await act(() => {
+      lastPage(new Response(JSON.stringify([{ ...games[0], live: true }, games[1]])))
+      return Promise.resolve()
+    })
+    expect(screen.getAllByRole('option')[0]).toHaveTextContent('Chiefs at Dolphins')
+    expect(screen.getByRole('heading', { name: 'Bills at Rams' })).toBeInTheDocument()
+    expect(screen.queryByText(/Loading remaining games/)).not.toBeInTheDocument()
+    expect(prices('Bills')).toEqual(['0.40', '0.50', '0.45', '0.10'])
+    expect(socket().send).toHaveBeenCalledTimes(sentBeforeCompletion)
+    expect(FakeSocket.instances).toHaveLength(1)
+  })
+
+  it('keeps partial games and live prices available after a later page fails, then retries', async () => {
+    let failPage: (response: Response) => void = () => undefined
+    fetchMock.mockResolvedValueOnce(fullPage(games[0])).mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          failPage = resolve
+        }),
+    )
+    await mount()
+    await connect()
+    await seed()
+    await act(() => {
+      failPage(new Response('', { status: 502 }))
+      return Promise.resolve()
+    })
+    expect(screen.getByRole('alert')).toHaveTextContent('The game list is incomplete.')
+    expect(screen.getByRole('alert')).toHaveTextContent('502')
+    expect(prices('Chiefs')).toEqual(['0.40', '0.50', '0.45', '0.10'])
+    expect(screen.getByText('Live Feed for Selected Matchup')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Try again' }))
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(0)
+    })
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+    expect(screen.getAllByRole('option')).toHaveLength(2)
+  })
+
+  it('waits for the terminal page before announcing an empty slate', async () => {
+    let finish: (response: Response) => void = () => undefined
+    fetchMock.mockResolvedValueOnce(fullPage()).mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          finish = resolve
+        }),
+    )
+    await mount()
+    expect(screen.getByText('Finding the next matchup')).toBeInTheDocument()
+    expect(screen.queryByText('No active games right now')).not.toBeInTheDocument()
+    await act(() => {
+      finish(new Response('[]'))
+      return Promise.resolve()
+    })
+    expect(screen.getByText('No active games right now')).toBeInTheDocument()
+  })
+
   it('shows loading, an empty result, and games after checking again', async () => {
     let respond: (response: Response) => void = () => undefined
     fetchMock.mockImplementationOnce(

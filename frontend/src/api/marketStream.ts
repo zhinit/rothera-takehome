@@ -20,10 +20,14 @@ export class MarketStream {
 
   setAssets(assets: string[]) {
     if (this.disposed) return
+    const nextAssets = new Set(assets)
+    // Discovery can refresh game objects without changing their subscription.
+    if (nextAssets.size === this.assets.length && this.assets.every((id) => nextAssets.has(id)))
+      return
     clearTimeout(this.snapshotTimeout)
     this.pendingSnapshots.clear()
     const previous = this.assets
-    this.assets = [...new Set(assets)]
+    this.assets = [...nextAssets]
     useMarketStore.getState().reset(this.assets)
     if (this.socket?.readyState === WebSocket.OPEN) {
       if (this.subscribed && previous.length)

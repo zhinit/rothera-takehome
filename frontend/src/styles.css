@@ -364,6 +364,12 @@ main {
   font-size: 12px;
 }
 
+.discovery-notice {
+  margin: 0 0 16px;
+  color: var(--color-secondary);
+  font-size: 12px;
+}
+
 .market-panel {
   container-type: inline-size;
   background: var(--color-panel);

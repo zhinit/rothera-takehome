@@ -11,7 +11,7 @@ Run from `frontend/`:
 
 | Command | Purpose |
 | --- | --- |
-| `npm test` | 59 Vitest unit/integration cases in jsdom, without external API access |
+| `npm test` | 64 Vitest unit/integration cases in jsdom, without external API access |
 | `npm run test:browser` | Seven repeatable Chrome scenario groups with controlled inputs |
 | `npm run test:live` | Optional connectivity smoke against Polymarket |
 | `npm run lint` | Type-aware TypeScript lint and browser script lint, zero warnings |
@@ -28,6 +28,10 @@ save screenshots and a JSON report to a printed temporary directory. Override
 - Discovery: pagination past nonmatching pages, deduplication, market filtering,
   home/away display names and fallbacks, reversed outcome/token order, malformed
   mappings, later-page failure, cancellation, loading, empty results and retry.
+- Progressive discovery: live prices before completion, automatic and user
+  selection preserved across reordered pages, duplicate-game metadata without
+  resubscription, partial failure with usable prices, terminal-only empty state,
+  cancellation during body parsing, and unchanged-token snapshot deadlines.
 - Feed to screen: initial books, deltas, trades, tick changes, historical trade
   precision, spread recalculation, zero/one prices, crossed markets, absent versus
   explicitly empty quote fields, malformed frames and mixed batches.
@@ -70,3 +74,8 @@ smoke check, lint, TypeScript, formatting and the production build passed.
 The [controlled browser report](browser-behavior-result.json) and
 [live smoke report](browser-smoke-result.json) include the temporary screenshot
 directories. Those directories are local run artifacts and may be cleaned up.
+
+After progressive discovery was added on 2026-10-06, all 64 Vitest cases, lint,
+TypeScript, formatting, and the production build passed. Browser suites were not
+rerun for this change. The new behavior is covered through controlled HTTP and
+WebSocket integration tests. Live startup timing has not been remeasured.

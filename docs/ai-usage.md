@@ -2,6 +2,8 @@
 
 ## 2026-10-06
 
+- GPT-6 (Codex): Implemented progressive NFL discovery using the existing latency research. Added start-time/ID ordering, per-page publication, stable game selection, incomplete-list progress and errors, and unchanged-token subscription preservation. Added five behavioral regression cases and passed all 64 tests, lint, TypeScript, formatting, and the production build. No subagents or other models were used.
+
 - GPT-6 (Codex): Researched NFL discovery latency using approved Polymarket and MDN primary sources, archived full sources, ran direct-browser offset concurrency/filter/ordering and metadata-cache probes, compared complete game/market/token coverage using the captured parser, and documented recommendations in the wiki and project docs. No application code was modified. No subagents or other models were used.
 
 - GPT-6 (Codex): Renamed the totals heading to Combined Team Points Over/Under and removed Full game from its line count label.

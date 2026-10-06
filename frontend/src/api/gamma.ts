@@ -92,15 +92,21 @@ export function parseGame(value: unknown): Game | null {
   }
 }
 
-export async function fetchGames(signal: AbortSignal): Promise<Game[]> {
+export async function fetchGames(
+  signal: AbortSignal,
+  onProgress?: (games: Game[]) => void,
+): Promise<Game[]> {
   const games = new Map<string, Game>()
   for (let offset = 0; ; offset += PAGE_SIZE) {
+    signal.throwIfAborted()
     const params = new URLSearchParams({
       tag_slug: 'nfl',
       active: 'true',
       closed: 'false',
       limit: String(PAGE_SIZE),
       offset: String(offset),
+      order: 'startTime,id',
+      ascending: 'true',
     })
     const response = await fetch(`https://gamma-api.polymarket.com/events?${params}`, {
       signal: AbortSignal.any([signal, AbortSignal.timeout(20_000)]),
@@ -109,19 +115,21 @@ export async function fetchGames(signal: AbortSignal): Promise<Game[]> {
     if (!response.ok)
       throw new Error(`Unable to load NFL games (HTTP ${response.status}). Please try again.`)
     const page: unknown = await response.json()
+    signal.throwIfAborted()
     if (!Array.isArray(page))
       throw new Error('The event service returned an unexpected response. Please try again.')
     for (const item of page) {
       const game = parseGame(item)
       if (game) games.set(game.id, game)
     }
+    const sorted = [...games.values()].sort(
+      (a, b) =>
+        Number(b.live) - Number(a.live) ||
+        (a.startTime ?? '9999').localeCompare(b.startTime ?? '9999') ||
+        a.title.localeCompare(b.title),
+    )
+    onProgress?.(sorted)
     // A full page with no matching games is not the end of the NFL listing.
-    if (page.length < PAGE_SIZE) break
+    if (page.length < PAGE_SIZE) return sorted
   }
-  return [...games.values()].sort(
-    (a, b) =>
-      Number(b.live) - Number(a.live) ||
-      (a.startTime ?? '9999').localeCompare(b.startTime ?? '9999') ||
-      a.title.localeCompare(b.title),
-  )
 }

@@ -118,6 +118,11 @@ describe('game discovery', () => {
         new URL(url instanceof Request ? url.url : url).searchParams.get('offset'),
       ),
     ).toEqual(['0', '100', '200'])
+    for (const [url] of fetchMock.mock.calls) {
+      const params = new URL(url instanceof Request ? url.url : url).searchParams
+      expect(params.get('order')).toBe('startTime,id')
+      expect(params.get('ascending')).toBe('true')
+    }
   })
 
   it('reports HTTP and malformed response failures', async () => {
@@ -190,5 +195,22 @@ describe('game discovery', () => {
         ),
     )
     await expect(fetchGames(controller.signal)).rejects.toMatchObject({ name: 'AbortError' })
+  })
+
+  it('does not publish a page or continue pagination after cancellation during its body read', async () => {
+    const controller = new AbortController()
+    const onProgress = vi.fn()
+    const response = new Response()
+    vi.spyOn(response, 'json').mockImplementation(() => {
+      controller.abort()
+      return Promise.resolve(Array.from({ length: 100 }, () => game))
+    })
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(response)
+    vi.stubGlobal('fetch', fetchMock)
+    await expect(fetchGames(controller.signal, onProgress)).rejects.toMatchObject({
+      name: 'AbortError',
+    })
+    expect(onProgress).not.toHaveBeenCalled()
+    expect(fetchMock).toHaveBeenCalledTimes(1)
   })
 })

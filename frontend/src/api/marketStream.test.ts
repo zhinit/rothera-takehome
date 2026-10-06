@@ -19,6 +19,19 @@ afterEach(() => {
 })
 
 describe('market connection', () => {
+  it('keeps the snapshot deadline when discovery repeats an unchanged token set', () => {
+    stream.setAssets(['a', 'b'])
+    socket().open()
+    vi.advanceTimersByTime(10_000)
+    socket().receive('PONG')
+    const sent = socket().send.mock.calls.length
+    stream.setAssets(['b', 'a', 'a'])
+    expect(socket().send).toHaveBeenCalledTimes(sent)
+    vi.advanceTimersByTime(5_000)
+    expect(socket().readyState).toBe(3)
+    expect(useMarketStore.getState().status).toBe('reconnecting')
+  })
+
   it('subscribes to the latest selection on open and switches on the same socket', () => {
     stream.setAssets(['a'])
     stream.setAssets(['b', 'c'])
