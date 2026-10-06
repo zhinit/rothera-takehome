@@ -26,8 +26,29 @@ This file describes how the project is organized, not what the work concludes.
 - Use React, TypeScript, and Vite. Keep the entire Vite application, including
   its package manifest, dependencies, and build and lint configuration, inside
   `frontend/`.
-- Include a linter when scaffolding the application. The linter choice is open.
-- Zustand is a candidate for market state management, not a confirmed dependency.
+- Use Zustand for streaming market state, with selectors that isolate updates
+  to the affected rows or cells.
+- Use ESLint with typescript-eslint's type-aware recommended rules and React
+  Hooks lint rules. Enable TypeScript strict mode.
+
+## Code quality and verification
+
+- Build only what the assignment requires. Keep the submission concise and
+  polished. Avoid speculative features, unused code, unnecessary dependencies,
+  and abstractions for hypothetical future needs.
+- Write code for a human reviewer: descriptive, consistent names, focused
+  functions and components, and clear module responsibilities. Extract shared
+  logic where it removes meaningful duplication without obscuring the code.
+- Do not use `any`. Enforce `@typescript-eslint/no-explicit-any` as an error.
+  Treat unvalidated API data as `unknown` and narrow it before use.
+- Fix type and lint errors at their source. Do not silence them with rule
+  disables, TypeScript suppression comments, or unjustified type assertions.
+- Run the frontend linter and TypeScript check after every code change before
+  handing work back. Require zero lint warnings and errors. If a check cannot
+  run, report that explicitly.
+- Run tests relevant to changed behavior and the production build before
+  marking implementation complete. Keep tests focused on observable behavior
+  and meaningful edge cases.
 
 ## Folder structure and separation of concerns
 
