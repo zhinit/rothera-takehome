@@ -2,36 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { MarketStream } from './marketStream'
 import { useMarketStore } from '../store/marketStore'
 
-class FakeSocket {
-  static OPEN = 1
-  static instances: FakeSocket[] = []
-  readyState = 0
-  onopen: (() => void) | null = null
-  onclose: (() => void) | null = null
-  onerror: (() => void) | null = null
-  onmessage: ((event: { data: string }) => void) | null = null
-  send = vi.fn<(data: string) => void>()
-  constructor() {
-    FakeSocket.instances.push(this)
-  }
-  open() {
-    this.readyState = 1
-    this.onopen?.()
-  }
-  close() {
-    this.readyState = 3
-    this.onclose?.()
-  }
-  receive(data: unknown) {
-    this.onmessage?.({ data: typeof data === 'string' ? data : JSON.stringify(data) })
-  }
-}
-
-function socket(index = 0): FakeSocket {
-  const result = FakeSocket.instances[index]
-  if (!result) throw new Error('Expected socket was not created')
-  return result
-}
+import { FakeSocket, socket } from '../test/FakeSocket'
 
 let stream: MarketStream
 beforeEach(() => {

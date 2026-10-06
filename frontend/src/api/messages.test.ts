@@ -90,4 +90,28 @@ describe('wire prices', () => {
     expect(spread(null, 0.51)).toBeNull()
     expect(formatPrice(null, 0.01)).toBe('—')
   })
+  it('ignores invalid book levels while preserving valid boundary prices', () => {
+    expect(
+      parseMessages(
+        JSON.stringify({
+          event_type: 'book',
+          asset_id: '1',
+          bids: [null, {}, { price: '-1' }, { price: '0' }],
+          asks: [false, { price: 'NaN' }, { price: '2' }, { price: '1' }],
+        }),
+      ),
+    ).toEqual([{ assetId: '1', snapshot: true, bid: 0, ask: 1, last: null, tick: null }])
+  })
+
+  it.each(['0', '1', '-0.01', 'NaN', '', null])('ignores invalid tick changes: %j', (tick) => {
+    expect(
+      parseMessages(
+        JSON.stringify({
+          event_type: 'tick_size_change',
+          asset_id: '1',
+          new_tick_size: tick,
+        }),
+      ),
+    ).toEqual([])
+  })
 })

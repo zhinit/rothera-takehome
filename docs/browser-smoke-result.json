@@ -1,20 +1,17 @@
 {
-  "checkedAt": "2026-10-06T18:46:39.357Z",
+  "checkedAt": "2026-10-06T19:55:05.158Z",
   "origin": "http://127.0.0.1:5174",
   "initial": {
-    "title": "Buccaneers vs. Cowboys",
+    "title": "Buccaneers at Cowboys",
     "games": 43,
     "rows": 86,
     "quotedBids": 86,
-    "horizontalOverflow": false,
-    "styled": true,
-    "background": "rgb(20, 20, 18)",
-    "marketQuestionSize": "12px"
+    "horizontalOverflow": false
   },
   "mobile": {
     "horizontalOverflow": false,
     "selectVisible": true,
-    "tableScrollable": true
+    "columnsReachable": true
   },
   "gammaOffsets": [
     "0",
@@ -28,11 +25,12 @@
   "sockets": 2,
   "received": {
     "book": 260,
-    "price_change": 0,
+    "price_change": 26,
     "last_trade_price": 0,
     "tick_size_change": 0,
     "PONG": 1
   },
   "sentFrames": 7,
-  "errors": []
+  "errors": [],
+  "output": "/var/folders/mc/hr7kxx_543v4n95ypq6pwl840000gn/T/rothera-browser-mH3wyE"
 }

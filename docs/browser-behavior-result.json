@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-06T19:54:31.338Z",
+  "passed": [
+    "discovery error, retry and initial missing prices",
+    "snapshot display and reversed outcome mapping",
+    "visible flashes, repeated increases, direction reversal, fade and unchanged prices",
+    "tick precision, trade updates and explicit empty quotes",
+    "desktop selection, stale game messages and subscription protocol",
+    "disconnect clears stale prices and reconnect restores current prices",
+    "mobile selection, table headings and viewport fit"
+  ],
+  "errors": [],
+  "output": "/var/folders/mc/hr7kxx_543v4n95ypq6pwl840000gn/T/rothera-browser-DAuhVC"
+}

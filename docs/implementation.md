@@ -95,38 +95,40 @@ See [price correctness](../wiki/polymarket-price-correctness.md) and
 
 ## Verification on 2026-10-06
 
-- Prettier formatting check: passed. Generated output and dependencies are excluded.
-- ESLint with type-aware recommended rules and React Hooks rules: zero warnings
-  or errors. TypeScript strict check: passed.
-- 28 tests across six files: passed. Covers pagination, scope, token validation,
-  all four wire event types, missing prices, non-power-of-ten ticks, spread,
-  immutable updates, same-socket switching, stale callbacks, heartbeat timeout,
-  reconnect/backoff, incomplete snapshot deadlines and recovery, teardown,
-  repeated flashes, UI states, and StrictMode cleanup.
-- A React Profiler test verified that a bid update commits its cell without
-  committing the unchanged ask or another token's cell, or invoking the table
-  parent again. This is a controlled render-isolation test, not a production
+- Formatting, type-aware ESLint with zero warnings/errors, and strict TypeScript:
+  passed. Browser scripts are now included in ESLint.
+- 59 unit/integration cases across six files: passed. Dashboard tests exercise
+  actual discovery, streaming, parsing, state and components with controlled
+  HTTP/WebSocket inputs. Cases cover partial snapshots, stale messages, reconnect
+  recovery, malformed batches, quote clearing, pagination failures/cancellation,
+  outcome mapping, and StrictMode cleanup.
+- Seven controlled Chrome scenario groups: passed. Checks cover discovery retry,
+  snapshots, visible flashes and fades, tick/trade/empty-price updates, desktop
+  subscription switching, reconnect recovery, and mobile selection/layout.
+  The [report](browser-behavior-result.json) records the successful groups and
+  the temporary directory containing screenshots.
+- A focused React Profiler test verifies that a bid update commits its cell
+  without committing the unchanged ask or another token's cell, or invoking its
+  test table parent again. This is render-isolation verification, not a production
   performance benchmark.
-- Production build: passed. JavaScript 238.54 kB (74.80 kB gzip), CSS 12.75 kB
-  (3.17 kB gzip) for this build.
-- Live headless Chrome: 43 active games, six Gamma pages, and all 86 outcome
-  snapshots for Buccaneers versus Cowboys. Game switching reused one socket.
-  A forced clean close created one replacement socket and restored current
-  snapshots. Literal PING and PONG were observed. No browser runtime exceptions.
-- Desktop 1440 × 1100 and mobile 390 × 844 screenshots were visually inspected.
-  Both layouts fit the viewport. Mobile selection and table scrolling worked.
-  The final smoke run asserted that the desktop stylesheet was applied, the
-  dark background matched the reference palette, and market descriptions used 12 px text.
+- Production build: passed. JavaScript 237.38 kB (74.65 kB gzip), CSS 10.63 kB
+  (2.80 kB gzip).
+- Live headless Chrome: 43 active games, six Gamma pages, and 86 outcome rows
+  for Buccaneers at Cowboys. Switching reused one socket. A forced close created
+  one replacement socket and restored current snapshots. Literal PING/PONG and
+  26 price-change messages were observed. No browser runtime exceptions.
+  Desktop and mobile viewport checks passed, as did mobile selection and access
+  to the price columns. See the [live report](browser-smoke-result.json).
 
-The initial browser run observed 95 price-change messages. The final run was
-quiet and observed no deltas during its short window. Neither run observed a
-trade or tick-size change, so those paths were verified with deterministic
-tests. Flash cancellation, direction, and 500 ms timing options were tested with
-a mocked animation API. Exact wall-clock fade duration was not measured.
+No trade or tick-size messages arrived during the live check. Controlled tests
+exercise both paths. Flash checks inspect rendered background colors, repeated
+changes, direction reversal, and eventual clearing. They allow browser scheduling
+tolerance around the 500 ms fade rather than measuring an exact duration.
+Screenshots are captured for inspection, not compared against visual baselines.
 
-The reproducible live check is `frontend/scripts/browser-smoke.mjs`. It prints
-the temporary directory containing its JSON report and screenshots. The current
-run's report is also preserved as [browser-smoke-result.json](browser-smoke-result.json).
+Run `npm test`, `npm run test:browser`, or `npm run test:live` from `frontend/`.
+Both browser commands require a running local app and installed Chrome.
+See [testing scope and approach](testing.md) for setup and limitations.
 
 ## Limits
 

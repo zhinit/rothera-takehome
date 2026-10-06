@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "slug": "nfl-kc-mia-2026-09-27",
+    "title": "Chiefs vs. Dolphins",
+    "startTime": "2026-09-27T17:00:00Z",
+    "markets": [
+      {
+        "id": "winner",
+        "question": "Chiefs vs. Dolphins",
+        "outcomes": ["Chiefs", "Dolphins"],
+        "clobTokenIds": ["101", "102"]
+      },
+      {
+        "id": "total",
+        "question": "Chiefs vs. Dolphins: O/U 43.5",
+        "outcomes": ["Under", "Over"],
+        "clobTokenIds": ["104", "103"]
+      }
+    ],
+    "teams": [
+      {
+        "alias": "Chiefs",
+        "ordering": "away"
+      },
+      {
+        "alias": "Dolphins",
+        "ordering": "home"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "nfl-buf-lar-2026-09-28",
+    "title": "Bills vs. Rams",
+    "startTime": "2026-09-28T17:00:00Z",
+    "markets": [
+      {
+        "id": "winner2",
+        "question": "Bills vs. Rams",
+        "outcomes": ["Bills", "Rams"],
+        "clobTokenIds": ["201", "202"]
+      }
+    ],
+    "teams": [
+      {
+        "alias": "Bills",
+        "ordering": "away"
+      },
+      {
+        "alias": "Rams",
+        "ordering": "home"
+      }
+    ]
+  }
+]

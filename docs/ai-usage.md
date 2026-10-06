@@ -2,6 +2,8 @@
 
 ## 2026-10-06
 
+- GPT-6 (Codex): Reworked the testing suite around observable behavior. Replaced dashboard module mocks with controlled HTTP and WebSocket boundaries, added feed-to-screen and malformed-data/recovery cases, removed object-identity and animation-call assertions, and retained render-isolation verification. Added repeatable Chrome behavior scenarios with visible flash checks, shared browser tooling with the optional live smoke check, and documented the test commands and limits. No subagents or other models were used.
+
 - GPT-6 (Codex): Used Gamma team ordering metadata to display matchups as Away Team at Home Team throughout the app. Preserved original titles for market matching and as a fallback when team metadata is incomplete. Added parsing and UI coverage.
 
 - GPT-6 (Codex): Removed the redundant subtitle beneath Market prices and its unused wrapper and styles.

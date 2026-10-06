@@ -27,11 +27,20 @@ npm test
 npm run build
 ```
 
-With the development server running, `npm run test:browser` launches headless
-Chrome for a live smoke test. Its default Chrome path is for macOS. Set
-`CHROME_PATH` for another installation and `DEMO_URL` for another local server
-URL. The test writes desktop/mobile screenshots and a JSON report to a printed
-temporary directory. It requires at least two active games and network access.
+With the development server running:
+
+```sh
+npm run test:browser  # Repeatable Chrome tests with controlled HTTP/WebSocket inputs
+npm run test:live     # Optional smoke test against live Polymarket APIs
+```
+
+Both browser commands launch headless Chrome and write screenshots and a JSON
+report to a printed temporary directory. The default Chrome path is for macOS.
+Set `CHROME_PATH` for another installation and `DEMO_URL` for another local server
+URL. The controlled suite needs no active markets or external API access. The
+live check requires at least two active games and network access.
+
+See [testing scope and approach](docs/testing.md) for coverage and limitations.
 
 `npm run preview` serves the production build locally.
 
