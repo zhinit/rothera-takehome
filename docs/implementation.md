@@ -34,6 +34,12 @@ one to 30 seconds plus up to 250 ms jitter. Connection attempts time out after
 15 seconds. Disconnection clears displayed prices. Reconnection requests fresh
 snapshots for the current selection. There is no replay assumption.
 
+Each subscription has a 15-second deadline for receiving every initial book.
+If any are missing, the socket closes and normal reconnect/backoff requests a
+fresh snapshot set. Deltas and PONGs do not satisfy the snapshot deadline.
+Backoff resets on PONG only after all snapshots arrive. Switching games starts
+a new deadline. Completion, disconnection, empty selection, and disposal cancel it.
+
 Messages are validated from `unknown`. Arrays and individual objects are
 accepted. The first snapshot per token seeds the numeric maximum bid, minimum
 ask, last trade, and tick. Subsequent snapshots for that subscription are
@@ -53,6 +59,19 @@ See the research on [wire behavior](../wiki/polymarket-clob-websocket.md),
 [Zustand](../wiki/zustand-streaming-state.md).
 
 ## Display decisions
+
+- Header logo and favicon are official assets downloaded from [ROTHERA](https://www.rothera.io/):
+  [full logo](https://cdn.prod.website-files.com/69a0b2d56634068be7fbbf29/69d2c4704867cb48db6d5fca_Website%20Full%20Logo.png)
+  and [favicon](https://cdn.prod.website-files.com/69a0b2d56634068be7fbbf29/69a0b2d56634068be7fbbfa5_Logo_Dark_32x32.png).
+  Both are served locally from `frontend/public/`.
+
+- The dark palette adapts ROTHERA's navy `#002549` and bright blue `#2bc1f9`
+  from its [official stylesheet](https://cdn.prod.website-files.com/69a0b2d56634068be7fbbf29/css/ledgerx-5e80c6e7301127f96-30c7b84631093.shared.8e03344b5.css).
+  Backgrounds use darker navy `#080f1a` and `#0c1828`, with cool white text.
+  Best bids retain green `#7daa8e` and best asks retain red `#e3a08a`,
+  independently of the brand accent. Lato/JetBrains Mono fonts remain in use.
+  Descriptions and headers are at least 12 px, and prices are 14 px.
+  Shared CSS variables define the palette.
 
 - Prices are in dollars per share. Empty or unavailable prices display `—`.
   Missing delta fields retain the prior field. Explicit empty best quotes clear
@@ -76,25 +95,28 @@ See [price correctness](../wiki/polymarket-price-correctness.md) and
 
 ## Verification on 2026-10-06
 
+- Prettier formatting check: passed. Generated output and dependencies are excluded.
 - ESLint with type-aware recommended rules and React Hooks rules: zero warnings
   or errors. TypeScript strict check: passed.
-- 24 tests across six files: passed. Covers pagination, scope, token validation,
+- 28 tests across six files: passed. Covers pagination, scope, token validation,
   all four wire event types, missing prices, non-power-of-ten ticks, spread,
   immutable updates, same-socket switching, stale callbacks, heartbeat timeout,
-  reconnect/backoff, teardown, repeated flashes, UI states, and StrictMode cleanup.
+  reconnect/backoff, incomplete snapshot deadlines and recovery, teardown,
+  repeated flashes, UI states, and StrictMode cleanup.
 - A React Profiler test verified that a bid update commits its cell without
   committing the unchanged ask or another token's cell, or invoking the table
   parent again. This is a controlled render-isolation test, not a production
   performance benchmark.
-- Production build: passed. JavaScript 237.90 kB (74.68 kB gzip), CSS 10.95 kB
-  (3.30 kB gzip) for this build.
+- Production build: passed. JavaScript 238.54 kB (74.80 kB gzip), CSS 12.75 kB
+  (3.17 kB gzip) for this build.
 - Live headless Chrome: 43 active games, six Gamma pages, and all 86 outcome
   snapshots for Buccaneers versus Cowboys. Game switching reused one socket.
   A forced clean close created one replacement socket and restored current
   snapshots. Literal PING and PONG were observed. No browser runtime exceptions.
 - Desktop 1440 × 1100 and mobile 390 × 844 screenshots were visually inspected.
   Both layouts fit the viewport. Mobile selection and table scrolling worked.
-  The final smoke run asserted that the desktop stylesheet was applied.
+  The final smoke run asserted that the desktop stylesheet was applied, the
+  dark background matched the reference palette, and market descriptions used 12 px text.
 
 The initial browser run observed 95 price-change messages. The final run was
 quiet and observed no deltas during its short window. Neither run observed a

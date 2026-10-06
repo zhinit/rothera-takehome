@@ -1,13 +1,15 @@
 {
-  "checkedAt": "2026-10-06T18:25:53.802Z",
-  "origin": "http://127.0.0.1:5173",
+  "checkedAt": "2026-10-06T18:46:39.357Z",
+  "origin": "http://127.0.0.1:5174",
   "initial": {
     "title": "Buccaneers vs. Cowboys",
     "games": 43,
     "rows": 86,
     "quotedBids": 86,
     "horizontalOverflow": false,
-    "styled": true
+    "styled": true,
+    "background": "rgb(20, 20, 18)",
+    "marketQuestionSize": "12px"
   },
   "mobile": {
     "horizontalOverflow": false,

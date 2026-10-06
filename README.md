@@ -21,6 +21,7 @@ the frontend application. An internet connection and access to Polymarket are re
 ```sh
 cd frontend
 npm run lint
+npm run format:check
 npm run typecheck
 npm test
 npm run build
@@ -34,12 +35,17 @@ temporary directory. It requires at least two active games and network access.
 
 `npm run preview` serves the production build locally.
 
+`npm run format` applies Prettier to the frontend. Formatting excludes dependencies,
+build output, coverage, and the generated lockfile. ESLint checks code quality separately.
+
 ## Implementation
 
 - Walks all Gamma NFL event pages, then selects active game events and exact
   moneyline/full-game total questions. Each token gets its own table row.
 - A single socket changes subscriptions when the selected game changes, sends
   ten-second heartbeats, and reconnects with fresh snapshots after disconnects.
+  Incomplete initial snapshots trigger recovery after 15 seconds, even when
+  heartbeats are still arriving.
 - Zustand selectors subscribe individual price cells to their price and tick.
   Changes flash green or red for 500 ms, restarting on each subsequent change.
 - Supports empty, loading, error, reconnecting, and missing-price states, with a
