@@ -78,7 +78,7 @@ export const MarketTable = memo(function MarketTable({ game }: { game: Game }) {
             )}
             <tr className="section-row">
               <th colSpan={5} scope="colgroup">
-                Over/Unders <span>{totals.length} lines · Full game</span>
+                Combined Team Points Over/Under <span>{totals.length} lines</span>
               </th>
             </tr>
             {totals.length ? (
